@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'articles',
+    'webexample',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,11 +52,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'MySite.urls'
-
+#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,'MySite/templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
