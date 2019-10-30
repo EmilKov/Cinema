@@ -1,0 +1,210 @@
+body {
+    background-color: #66665B;
+	background-repeat: no-repeat;
+	background-image: url(images/11.jpg);
+}
+a{
+	color:#F3F727;
+}
+#ChessAch{
+	font-size: 14pt;
+	font-weight: bold;
+	background-color: #433329;
+	color: #BDC01B;
+	position: absolute;
+	height:25px;
+	width: 175px;
+	left: 150px;
+	top:9px;
+
+	padding-left: 0.5em;
+	border: 7px solid #F9FAB0;
+	border-width:2px;
+}
+#UrStats{
+	font-size: 14pt;
+    font-weight: bold; 
+	background-color: #433329;
+	color: #BDC01B;
+	position: relative;
+	padding-left: 0.5 em;
+    bottom: 380px;
+    width: 120px;
+    left: 132px;
+    top: 60px;
+	text-align: center;
+	border: 7px solid #F9FAB0;
+	border-width:2px;
+	padding: 5px;
+	margin:10px;
+}
+#ChessNews{
+	font-size: 14pt;
+    font-weight: bold;
+	background-color: #433329;
+	color: #BDC01B;
+    position: relative;
+    padding-left: 0.5em;
+    top: 16px;
+    bottom: 100px;
+    width: 96px;
+    left: 285px;
+	text-align: center;
+	border: 7px solid #F9FAB0;
+	border-width:2px;
+	padding: 5px;
+	margin:10px;
+}
+#ChessWorldRating{
+	font-size: 14pt;
+    font-weight: bold;
+	background-color: #433329;
+    color: #BDC01B;
+	position: relative;
+    padding-left: 0.5em;
+	left: 417px;
+    top: -28px;
+    bottom: 100px;
+    width: 164px;
+    text-align: center;
+	border: 7px solid #F9FAB0;
+	border-width:2px;
+	padding: 5px;
+	margin:10px;
+}
+#HomepageInfo{
+	font-size: 14pt;
+    font-weight: bold;
+	background-color: #433329;
+    color: #F3F727;
+	position: relative;
+    padding-left: 0.5em;
+	left: 500px;
+    top: 0px;
+    bottom: 100px;
+    width: 190px;
+    text-align: center;
+	border: 7px solid #F9FAB0;
+	border-width:2px;
+	padding: 5px;
+	margin:10px;
+}
+#HomepageInfo2{
+	font-size: 13.5pt;
+    font-weight: bold;
+	
+    color: #F3F727;
+	position: relative;
+    padding-left: 0.5em;
+	left: 132px;
+    top: 0px;
+    bottom: -100px;
+    width: 1000px;
+    text-align: left;
+	
+}
+#Community{
+	font-size: 14pt;
+    font-weight: bold;
+	background-color: #433329;
+    color: #F3F727;
+	position: relative;
+    padding-left: 0.5em;
+	left: -17px;
+    top: 80px;
+    bottom: -100px;
+    width: 165px;
+    text-align: left;
+	border: 7px solid #F9FAB0;
+	border-width:2px;
+	padding: 5px;
+	margin:10px;
+}
+#CommunityListLichessOrg{
+	font-size: 14pt;
+    font-weight: bold;
+	background-color: #433329;
+    color: #BDC01B;
+	position: relative;
+    padding-left: 0.5em;
+	left: -17px;
+    top: 90px;
+    bottom: -100px;
+    width: 195px;
+    text-align: left;
+	border: 7px solid #F9FAB0;
+	border-width:2px;
+	padding: 5px;
+	margin:10px;
+}
+#CommunityListChessCom{
+	font-size: 14pt;
+    font-weight: bold;
+	background-color: #433329;
+    color: #BDC01B;
+	position: relative;
+    padding-left: 0.5em;
+	left: -17px;
+    top: 90px;
+    bottom: -100px;
+    width: 195px;
+    text-align: left;
+	border: 7px solid #F9FAB0;
+	border-width:2px;
+	padding: 5px;
+	margin:10px;
+}
+#TheEnd{
+	font-size: 14pt;
+    font-weight: bold; 
+	
+	color: #000000;
+	position: relative;
+	padding-left: 0.5 em;
+    bottom: 380px;
+    width: 250px;
+    left: 132px;
+    top: 60px;
+	text-align: center;
+	
+}
+#TheEnd2{
+	font-size: 14pt;
+    font-weight: bold; 
+	
+	color: #F3F727;
+	position: relative;
+	padding-left: 0.5 em;
+    bottom: 380px;
+    width: 250px;
+    left: 330px;
+    top: 38px;
+	text-align: center;
+	
+}
+#TheEnd3{
+	font-size: 14pt;
+    font-weight: bold; 
+	
+	color: #000000;
+	position: relative;
+	padding-left: 0.5 em;
+    bottom: 380px;
+    width: 250px;
+    left: 485px;
+    top: 16px;
+	text-align: center;
+}
+#TheEnd4{
+	font-size: 14pt;
+    font-weight: bold; 
+	
+	color: #000000;
+	position: relative;
+	padding-left: 0.5 em;
+    bottom: 380px;
+    width: 250px;
+    left: 607px;
+    top: -7px;
+	text-align: center;
+}
