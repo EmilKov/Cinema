@@ -7,7 +7,7 @@ class Movie(models.Model):
     movie_release_date = models.DateField(null=True, blank=True)
     movie_genre = models.CharField('genre', max_length=20)
     movie_plot = models.TextField('plot', max_length=5000)
-    #movie_poster = models.ImageField(upload_to='prisoners',height_field=None,width_field=None)
+    #movie_poster = models.ImageField(upload_to='static/img', blank = True, null = True)
 
     def __str__(self):
         return self.movie_title
