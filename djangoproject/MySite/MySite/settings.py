@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Cinema',
     'articles',
     'movies',
     'django.contrib.admin',
