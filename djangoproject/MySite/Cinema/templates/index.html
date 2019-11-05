@@ -32,7 +32,7 @@
 <body>
 <!--preloading-->
 <div id="preloader">
-    <img class="logo" src="{% static "images/logo1.png" %}"  alt="" width="119" height="58">
+    <img class="logo" src="{% static 'images/logo1.png' %}"  alt="" width="119" height="58">
     <div id="status">
         <span></span>
         <span></span>
@@ -159,8 +159,8 @@
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" >Movie grid<i class="ion-ios-arrow-forward"></i></a>
 									<ul class="dropdown-menu level2">
-										<li><a href="moviegrid.html">Movie grid</a></li>
-										<li><a href="moviegridfw.html">movie grid full width</a></li>
+										<li><a href="{% static 'moviegrid.html' %}">Movie grid</a></li>
+										<li><a href="{% static 'moviegridfw.html' %}">movie grid full width</a></li>
 									</ul>
 								</li>
 								<li><a href="movielist.html">Movie list</a></li>
@@ -245,7 +245,7 @@
 	    	<div  class="slick-multiItemSlider">
 	    		<div class="movie-item">
 	    			<div class="mv-img">
-	    				<a href="#"><img src="{% static "images/uploads/slider1.jpg" %}" class="img-thumbnail" alt="" width="285" height="437"></a>
+	    				<a href="#"><img src="{% static 'images/uploads/slider1.jpg' %}" class="img-thumbnail" alt="" width="285" height="437"></a>
 	    			</div>
 	    			<div class="title-in">
 	    				<div class="cate">
@@ -257,7 +257,7 @@
 	    		</div>
 				<div class="movie-item">
 	    			<div class="mv-img">
-	    				<a href="#"><img src="{% static "images/uploads/slider2.jpg" %}" alt="" width="285" height="437"></a>
+	    				<a href="#"><img src="{% static 'images/uploads/slider2.jpg' %}" alt="" width="285" height="437"></a>
 	    			</div>
 	    			<div class="title-in">
 	    				<div class="cate">
@@ -269,7 +269,7 @@
 	    		</div>
 	    		<div class="movie-item">
 	    			<div class="mv-img">
-	    				<a href="#"><img src="{% static "images/uploads/slider3.jpg" %}" alt="" width="285" height="437"></a>
+	    				<a href="#"><img src="{% static 'images/uploads/slider3.jpg' %}" alt="" width="285" height="437"></a>
 	    			</div>
 	    			<div class="title-in">
 	    				<div class="cate">
