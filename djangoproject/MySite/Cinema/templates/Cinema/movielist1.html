@@ -23,16 +23,16 @@
 	<!-- Mobile specific meta -->
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone-no">
-
+{% load staticfiles %}
 	<!-- CSS files -->
-	<link rel="stylesheet" href="css/plugins.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="{% static 'css/plugins.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
 </head>
 <body>
 <!--preloading-->
 <div id="preloader">
-    <img class="logo" src="images/logo1.png" alt="" width="119" height="58">
+    <img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58">
     <div id="status">
         <span></span>
         <span></span>
@@ -51,7 +51,7 @@
                     <input type="text" name="username" id="username" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
         	</div>
-           
+
             <div class="row">
             	<label for="password">
                     Password:
@@ -92,7 +92,7 @@
                     <input type="text" name="username" id="username-2" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
             </div>
-           
+
             <div class="row">
                 <label for="email-2">
                     your email:
@@ -133,7 +133,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="index-2.html"><img class="logo" src="images/logo1.png" alt="" width="119" height="58"></a>
+				    <a href="/index"><img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -162,8 +162,8 @@
 										<li><a href="moviegrid.html">Movie grid</a></li>
 										<li><a href="moviegridfw.html">movie grid full width</a></li>
 									</ul>
-								</li>			
-								<li><a href="movielist.html">Movie list</a></li>
+								</li>
+								<li><a href="/movielist">Movie list</a></li>
 								<li><a href="moviesingle.html">Movie single</a></li>
 								<li class="it-last"><a href="seriessingle.html">Series single</a></li>
 							</ul>
@@ -211,7 +211,7 @@
 								<li><a href="404.html">404 Page</a></li>
 								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
 							</ul>
-						</li>                
+						</li>
 						<li><a href="#">Help</a></li>
 						<li class="loginLink"><a href="#">LOG In</a></li>
 						<li class="btn signupLink"><a href="#">sign up</a></li>
@@ -219,7 +219,7 @@
 				</div>
 			<!-- /.navbar-collapse -->
 	    </nav>
-	    
+
 	    <!-- top search form -->
 	    <div class="top-search">
 	    	<select>
@@ -262,11 +262,11 @@
 						<option value="date">Release date Descending</option>
 						<option value="date">Release date Ascending</option>
 					</select>
-					<a href="movielist.html" class="list"><i class="ion-ios-list-outline active"></i></a>
+					<a href="/movielist" class="list"><i class="ion-ios-list-outline active"></i></a>
 					<a  href="moviegrid.html" class="grid"><i class="ion-grid"></i></a>
 				</div>
 				<div class="movie-item-style-2">
-					<img src="images/uploads/mv1.jpg" alt="">
+					<img src="{% static 'images/uploads/mv1.jpg' %}" alt="">
 					<div class="mv-item-infor">
 						<h6><a href="moviesingle.html">oblivion <span>(2012)</span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
@@ -277,7 +277,7 @@
 					</div>
 				</div>
 				<div class="movie-item-style-2">
-					<img src="images/uploads/mv2.jpg" alt="">
+					<img src="{% static 'images/uploads/mv2.jpg' %}" alt="">
 					<div class="mv-item-infor">
 						<h6><a href="moviesingle.html">into the wild <span>(2014)</span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>7.8</span> /10</p>
@@ -288,7 +288,7 @@
 					</div>
 				</div>
 				<div class="movie-item-style-2">
-					<img src="images/uploads/mv3.jpg" alt="">
+					<img src="{% static 'images/uploads/mv3.jpg' %}" alt="">
 					<div class="mv-item-infor">
 						<h6><a href="moviesingle.html">blade runner  <span>(2015)</span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>7.3</span> /10</p>
@@ -299,7 +299,7 @@
 					</div>
 				</div>
 				<div class="movie-item-style-2">
-					<img src="images/uploads/mv4.jpg" alt="">
+					<img src="{% static 'images/uploads/mv4.jpg' %}" alt="">
 					<div class="mv-item-infor">
 						<h6><a href="moviesingle.html">Mulholland pride<span> (2013)  </span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>7.2</span> /10</p>
@@ -309,8 +309,8 @@
 						<p>Stars: <a href="#">Robert Downey Jr., </a> <a href="#">  Guy Pearce,</a><a href="#">Don Cheadle</a></p>
 					</div>
 				</div>
-				<div class="movie-item-style-2">
-					<img src="images/uploads/mv5.jpg" alt="">
+				<!-- <div class="movie-item-style-2">
+					<img src="{% static 'images/uploads/mv5.jpg' %}" alt="">
 					<div class="mv-item-infor">
 						<h6><a href="moviesingle.html">skyfall: evil of boss<span> (2013)  </span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>7.0</span> /10</p>
@@ -318,7 +318,20 @@
 						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
 						<p>Director: <a href="#">Alan Taylor</a></p>
 						<p>Stars: <a href="#">Chris Hemsworth,  </a> <a href="#">  Natalie Portman,</a><a href="#">Tom Hiddleston</a></p>
-					</div>
+					</div> -->
+					{% block content %}
+
+					{% endblock %}
+					<div class="movie-item-style-2">
+						<img src="{% static 'images/uploads/mv2.jpg' %}" alt="">
+						<div class="mv-item-infor">
+							<h6><a href="moviesingle.html">into the wild <span>(2014)</span></a></h6>
+							<p class="rate"><i class="ion-android-star"></i><span>7.8</span> /10</p>
+							<p class="describe">As Steve Rogers struggles to embrace his role in the modern world, he teams up with a fellow Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat...</p>
+							<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
+							<p>Director: <a href="#">Anthony Russo,</a><a href="#">Joe Russo</a></p>
+							<p>Stars: <a href="#">Chris Evans,</a> <a href="#">Samuel L. Jackson,</a> <a href="#">  Scarlett Johansson</a></p>
+						</div>
 				</div>
 				<div class="topbar-filter">
 					<label>Movies per page:</label>
@@ -357,18 +370,18 @@
 					                        <option value="Action5">Action 5</option>
 										</select>
 									</div>
-									
+
 								</div>
 								<div class="col-md-12 form-it">
 									<label>Rating Range</label>
-									
+
 									 <select>
 										<option value="range">-- Select the rating range below --</option>
 										<option value="saab">-- Select the rating range below --</option>
 										<option value="saab">-- Select the rating range below --</option>
 										<option value="saab">-- Select the rating range below --</option>
 									</select>
-									
+
 								</div>
 								<div class="col-md-12 form-it">
 									<label>Release Year</label>
@@ -398,7 +411,7 @@
 						</form>
 					</div>
 					<div class="ads">
-						<img src="images/uploads/ads1.png" alt="">
+						<img src="{% static 'images/uploads/ads1.png' %}" >
 					</div>
 					<div class="sb-facebook sb-it">
 						<h4 class="sb-title">Find us on Facebook</h4>
@@ -411,7 +424,7 @@
 							</div>
 							<div class="tweet item" id=""><!-- Put your 2nd twiter account id here -->
 							</div>
-						</div>							
+						</div>
 					</div>
 				</div>
 			</div>
@@ -423,7 +436,7 @@
 	<div class="container">
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
-				 <a href="index-2.html"><img class="logo" src="images/logo1.png" alt=""></a>
+				 <a href="/index"><img class="logo" src="{% static 'images/logo1.png' %}" alt=""></a>
 				 <p>5th Avenue st, manhattan<br>
 				New York, NY 10001</p>
 				<p>Call us: <a href="#">(+01) 202 342 6789</a></p>
@@ -431,7 +444,7 @@
 			<div class="flex-child-ft item2">
 				<h4>Resources</h4>
 				<ul>
-					<li><a href="#">About</a></li> 
+					<li><a href="#">About</a></li>
 					<li><a href="#">Blockbuster</a></li>
 					<li><a href="#">Contact Us</a></li>
 					<li><a href="#">Forums</a></li>
@@ -442,16 +455,16 @@
 			<div class="flex-child-ft item3">
 				<h4>Legal</h4>
 				<ul>
-					<li><a href="#">Terms of Use</a></li> 
-					<li><a href="#">Privacy Policy</a></li>	
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy Policy</a></li>
 					<li><a href="#">Security</a></li>
 				</ul>
 			</div>
 			<div class="flex-child-ft item4">
 				<h4>Account</h4>
 				<ul>
-					<li><a href="#">My Account</a></li> 
-					<li><a href="#">Watchlist</a></li>	
+					<li><a href="#">My Account</a></li>
+					<li><a href="#">Watchlist</a></li>
 					<li><a href="#">Collections</a></li>
 					<li><a href="#">User Guide</a></li>
 				</ul>
@@ -477,10 +490,10 @@
 </footer>
 <!-- end of footer section-->
 
-<script src="js/jquery.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/plugins2.js"></script>
-<script src="js/custom.js"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/plugins2.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 <!-- movielist07:38-->
