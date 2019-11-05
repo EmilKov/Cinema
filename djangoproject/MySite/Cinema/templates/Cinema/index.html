@@ -23,16 +23,16 @@
 	<!-- Mobile specific meta -->
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone-no">
-
-	<!-- CSS files -->
-	<link rel="stylesheet" href="css/plugins.css">
-	<link rel="stylesheet" href="css/style.css">
+	{% load staticfiles %}
+		<!-- CSS files -->
+		<link rel="stylesheet" href="{% static 'css/plugins.css' %}" type="text/css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
 </head>
 <body>
 <!--preloading-->
 <div id="preloader">
-    <img class="logo" src="images/logo1.png" alt="" width="119" height="58">
+    <img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58">
     <div id="status">
         <span></span>
         <span></span>
@@ -51,7 +51,7 @@
                     <input type="text" name="username" id="username" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
         	</div>
-           
+
             <div class="row">
             	<label for="password">
                     Password:
@@ -92,7 +92,7 @@
                     <input type="text" name="username" id="username-2" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
             </div>
-           
+
             <div class="row">
                 <label for="email-2">
                     your email:
@@ -133,7 +133,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="index-2.html"><img class="logo" src="images/logo1.png" alt="" width="119" height="58"></a>
+				    <a href="index-2.html"><img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -150,7 +150,7 @@
 								<li><a href="homev2.html">Home 02</a></li>
 								<li><a href="homev3.html">Home 03</a></li>
 							</ul>
-						</li>	
+						</li>
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							movies<i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -212,7 +212,7 @@
 								<li><a href="404.html">404 Page</a></li>
 								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
 							</ul>
-						</li>                
+						</li>
 						<li><a href="#">Help</a></li>
 						<li class="loginLink"><a href="#">LOG In</a></li>
 						<li class="btn signupLink"><a href="#">sign up</a></li>
@@ -222,7 +222,7 @@
 	    </nav>
 	    <!-- search form -->
 		</div>
-	
+
 </header>
 <!-- END | Header -->
 
@@ -252,7 +252,7 @@
 											<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
 											<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
 										</div>
-									</div>		
+									</div>
 								</div>
 			    				<div class="mv-details">
 			    					<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
@@ -265,15 +265,15 @@
 			    				<div class="btn-transform transform-vertical">
 									<div><a href="#" class="item item-1 redbtn">more detail</a></div>
 									<div><a href= "#" class="item item-2 redbtn hvrbtn">more detail</a></div>
-								</div>		
+								</div>
 			    			</div>
 	    				</div>
 	    				<div class="col-md-4 col-sm-12 col-xs-12">
 		    				<div class="mv-img-2">
-			    				<a href="#"><img src="images/uploads/poster1.jpg" alt=""></a>
+			    				<a href="#"><img src="{% static 'images/uploads/poster1.jpg' %}" alt=""></a>
 			    			</div>
 		    			</div>
-	    			</div>	
+	    			</div>
 	    		</div>
 	    		<div class="movie-item">
 	    			<div class="row">
@@ -297,7 +297,7 @@
 											<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
 											<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
 										</div>
-									</div>		
+									</div>
 								</div>
 			    				<div class="mv-details">
 			    					<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
@@ -311,15 +311,15 @@
 									<div><a href="#" class="item item-1 redbtn">more detail</a></div>
 									<div><a href= "#" class="item item-2 redbtn hvrbtn">more detail</a></div>
 								</div>
-			    				
+
 			    			</div>
 	    				</div>
 	    				<div class="col-md-4 col-sm-12 col-xs-12">
 		    				<div class="mv-img-2">
-			    				<a href="#"><img src="images/uploads/poster1.jpg" alt=""></a>
+			    				<a href="#"><img src="{% static 'images/uploads/poster1.jpg' %}" alt=""></a>
 			    			</div>
 		    			</div>
-	    			</div>	
+	    			</div>
 	    		</div>
 	    	</div>
 	    </div>
@@ -337,7 +337,7 @@
 					<li class="active"><a href="#tab1-h2">#Popular</a></li>
 					<li><a href="#tab2-h2"> #Coming soon</a></li>
 					<li><a href="#tab3-h2">  #Top rated  </a></li>
-					<li><a href="#tab4-h2"> #Most reviewed</a></li>                        
+					<li><a href="#tab4-h2"> #Most reviewed</a></li>
 				</ul>
 			    <div class="tab-content">
 			        <div id="tab1-h2" class="tab active">
@@ -346,7 +346,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it1.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it1.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -360,7 +360,7 @@
 								<div class="slide-it">
 									<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it2.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it2.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -374,7 +374,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it3.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it3.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -388,7 +388,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it4.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it4.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -402,7 +402,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it5.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -416,7 +416,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it6.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -430,7 +430,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it7.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -444,7 +444,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it8.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -464,7 +464,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it4.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it4.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -478,7 +478,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it5.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -492,7 +492,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it6.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -506,7 +506,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it7.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -520,7 +520,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it8.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -540,7 +540,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it1.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it1.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -554,7 +554,7 @@
 								<div class="slide-it">
 									<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it2.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it2.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -568,7 +568,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it3.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it3.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -582,7 +582,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it4.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it4.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -596,7 +596,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it5.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -616,7 +616,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it5.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -630,7 +630,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it6.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -644,7 +644,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it7.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -658,7 +658,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it8.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -683,7 +683,7 @@
 					<li class="active"><a href="#tab21-h2">#Popular</a></li>
 					<li><a href="#tab22-h2"> #Coming soon</a></li>
 					<li><a href="#tab23-h2">  #Top rated  </a></li>
-					<li><a href="#tab24-h2"> #Most reviewed</a></li>                        
+					<li><a href="#tab24-h2"> #Most reviewed</a></li>
 				</ul>
 			    <div class="tab-content">
 			        <div id="tab21-h2" class="tab active">
@@ -692,7 +692,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it7.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -706,7 +706,7 @@
 								<div class="slide-it">
 									<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it8.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -720,7 +720,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it9.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it9.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -734,7 +734,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it4.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it4.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -748,7 +748,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it5.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -762,7 +762,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it6.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -776,7 +776,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it7.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -790,7 +790,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it8.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -810,7 +810,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it4.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it4.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -824,7 +824,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it5.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -838,7 +838,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it6.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -852,7 +852,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it7.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -866,7 +866,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it8.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -885,7 +885,7 @@
 			            	<div class="slick-multiItem2">
 			            		<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it1.jpg" alt="">
+			            				<img src="{% static 'images/uploads/mv-it1.jpg' %}" alt="">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -897,7 +897,7 @@
 			            		</div>
 								<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it2.jpg" alt="">
+			            				<img src="{% static 'images/uploads/mv-it2.jpg' %}" alt="">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -909,7 +909,7 @@
 			            		</div>
 			            		<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it3.jpg" alt="">
+			            				<img src="{% static 'images/uploads/mv-it3.jpg' %}" alt="">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -921,7 +921,7 @@
 			            		</div>
 			            		<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it4.jpg" alt="">
+			            				<img src="{% static 'images/uploads/mv-it4.jpg' %}" alt="">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -933,7 +933,7 @@
 			            		</div>
 			            		<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it3.jpg" alt="">
+			            				<img src="{% static 'images/uploads/mv-it3.jpg' %}" alt="">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -952,7 +952,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it4.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it4.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -966,7 +966,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it5.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -980,7 +980,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it6.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -994,7 +994,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it7.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -1008,7 +1008,7 @@
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="{% static 'images/uploads/mv-it8.jpg' %}" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
@@ -1060,7 +1060,7 @@
 					<div class="slider-nav-2 thumb-ft">
 						<div class="item">
 							<div class="trailer-img">
-								<img src="images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
+								<img src="{% static 'images/uploads/trailer7.jpg' %}"  alt="photo by Barn Images" width="4096" height="2737">
 							</div>
 							<div class="trailer-infor">
 	                        	<h4 class="desc">Wonder Woman</h4>
@@ -1069,7 +1069,7 @@
 						</div>
 						<div class="item">
 							<div class="trailer-img">
-								<img src="images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
+								<img src="{% static 'images/uploads/trailer2.jpg' %}"  alt="photo by Barn Images" 	width="350" height="200">
 							</div>
 							<div class="trailer-infor">
 	                        	<h4 class="desc">Oblivion: Official Teaser Trailer</h4>
@@ -1078,7 +1078,7 @@
 						</div>
 						<div class="item">
 							<div class="trailer-img">
-								<img src="images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
+								<img src="{% static 'images/uploads/trailer6.jpg' %}" alt="photo by Joshua Earle" width="509" height="301">
 							</div>
 							<div class="trailer-infor">
 	                        	<h4 class="desc">Exclusive Interview:  Skull Island</h4>
@@ -1087,30 +1087,30 @@
 						</div>
 						<div class="item">
 							<div class="trailer-img">
-								<img src="images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
+								<img src="{% static 'images/uploads/trailer5.png' %}" alt="photo by Alexander Dimitrov" width="100" height="56">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>	
+	                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>
 	                        	<p>2:43</p>
 	                        </div>
 						</div>
 						<div class="item">
 							<div class="trailer-img">
-								<img src="images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
+								<img src="{% static 'images/uploads/trailer4.png' %}"  alt="photo by Wojciech Szaturski" width="100" height="56">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>	
+	                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>
 	                        	<p>2: 32</p>
-	                        </div>	
+	                        </div>
 						</div>
 						<div class="item">
 							<div class="trailer-img">
-								<img src="images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
+								<img src="{% static 'images/uploads/trailer5.jpg' %}"  alt="photo by Wojciech Szaturski" width="360" height="189">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Fast&Furious 8</h4>	
+	                        	<h4 class="desc">Fast&Furious 8</h4>
 	                        	<p>3:11</p>
-	                        </div>	
+	                        </div>
 						</div>
 					</div>
 				</div>
@@ -1120,28 +1120,28 @@
 					<div class="celebrities">
 						<h4 class="sb-title">Spotlight Celebrities</h4>
 						<div class="celeb-item">
-							<a href="#"><img src="images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
+							<a href="#"><img src="{% static 'images/uploads/ava1.jpg' %}" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Samuel N. Jack</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="#"><img src="images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
+							<a href="#"><img src="{% static 'images/uploads/ava2.jpg' %}" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Benjamin Carroll</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="#"><img src="images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
+							<a href="#"><img src="{% static 'images/uploads/ava3.jpg' %}" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Beverly Griffin</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="#"><img src="images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
+							<a href="#"><img src="{% static 'images/uploads/ava4.jpg' %}" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Justin Weaver</a></h6>
 								<span>Actor</span>
@@ -1151,14 +1151,14 @@
 				</div>
 			</div>
 		</div>
-	
+
 </div>
 <!-- latest new v2 section-->
 <div class="latestnew full-width">
 		<div class="row">
 			<div class="col-md-9">
 				<div class="ads adsv2">
-					<img src="images/uploads/ads2.png" alt="">
+					<img src="{% static 'images/uploads/ads2.png' %}" alt="">
 				</div>
 				<div class="title-hd">
 					<h2>Latest news</h2>
@@ -1166,7 +1166,7 @@
 				</div>
 				<div class="latestnewv2">
 					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="images/uploads/blogv21.jpg" alt=""></a>
+						<a href="blogdetail.html"><img src="{% static 'images/uploads/blogv21.jpg' %}" alt=""></a>
 						<div class="blog-it-infor">
 							<h3><a href="blogdetail.html">Godzilla: King Of The Monsters Adds O’Shea Jackson Jr</a></h3>
 							<span class="time">27 Mar 2017</span>
@@ -1174,7 +1174,7 @@
 						</div>
 					</div>
 					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="images/uploads/blogv22.jpg" alt=""></a>
+						<a href="blogdetail.html"><img src="{% static 'images/uploads/blogv22.jpg' %}" alt=""></a>
 						<div class="blog-it-infor">
 							<h3><a href="blogdetail.html">First Official Images of Alicia Vikander As Tomb Raider’s Lara Croft</a></h3>
 							<span class="time">27 Mar 2017</span>
@@ -1182,7 +1182,7 @@
 						</div>
 					</div>
 					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="images/uploads/blogv23.jpg" alt=""></a>
+						<a href="blogdetail.html"><img src="{% static 'images/uploads/blogv23.jpg' %}" alt=""></a>
 						<div class="blog-it-infor">
 							<h3><a href="blogdetail.html">New Spider-Man: Homecoming Poster Finds Peter Parker At Rest</a></h3>
 							<span class="time">27 Mar 2017</span>
@@ -1190,7 +1190,7 @@
 						</div>
 					</div>
 					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="images/uploads/blogv24.jpg" alt=""></a>
+						<a href="blogdetail.html"><img src="{% static 'images/uploads/blogv24.jpg' %}" alt=""></a>
 						<div class="blog-it-infor">
 							<h3><a href="blogdetail.html">Joseph Gordon-Levitt Directing Moive Musical Comedy Wingmen</a></h3>
 							<span class="time">27 Mar 2017</span>
@@ -1212,12 +1212,12 @@
 							</div>
 							<div class="tweet item" id=""><!-- Put your 2nd twiter account id here -->
 							</div>
-						</div>					
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
+
 </div>
 <!--end of latest new v2 section-->
 <!-- footer v2 section-->
@@ -1225,7 +1225,7 @@
 	<div class="row">
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
-				 <a href="index-2.html"><img class="logo" src="images/logo1.png" alt=""></a>
+				 <a href="index-2.html"><img class="logo" src="{% static 'images/logo1.png' %}" alt=""></a>
 				 <p>5th Avenue st, manhattan<br>
 				New York, NY 10001</p>
 				<p>Call us: <a href="#">(+01) 202 342 6789</a></p>
@@ -1233,7 +1233,7 @@
 			<div class="flex-child-ft item2">
 				<h4>Resources</h4>
 				<ul>
-					<li><a href="#">About</a></li> 
+					<li><a href="#">About</a></li>
 					<li><a href="#">Blockbuster</a></li>
 					<li><a href="#">Contact Us</a></li>
 					<li><a href="#">Forums</a></li>
@@ -1244,16 +1244,16 @@
 			<div class="flex-child-ft item3">
 				<h4>Legal</h4>
 				<ul>
-					<li><a href="#">Terms of Use</a></li> 
-					<li><a href="#">Privacy Policy</a></li>	
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy Policy</a></li>
 					<li><a href="#">Security</a></li>
 				</ul>
 			</div>
 			<div class="flex-child-ft item4">
 				<h4>Account</h4>
 				<ul>
-					<li><a href="#">My Account</a></li> 
-					<li><a href="#">Watchlist</a></li>	
+					<li><a href="#">My Account</a></li>
+					<li><a href="#">Watchlist</a></li>
 					<li><a href="#">Collections</a></li>
 					<li><a href="#">User Guide</a></li>
 				</ul>
@@ -1279,10 +1279,10 @@
 </footer>
 <!-- end of footer v2 section-->
 
-<script src="js/jquery.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/plugins2.js"></script>
-<script src="js/custom.js"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/plugins2.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 <!-- homev207:28-->
