@@ -19,6 +19,6 @@ urlpatterns = [
     template_name="Cinema/moviesingle.html")),
 
     path('user/<int:pk>/',
-    DetailView.as_view(model=User,
+    DetailView.as_view(model=user,
     template_name="Cinema/userprofile.html")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
