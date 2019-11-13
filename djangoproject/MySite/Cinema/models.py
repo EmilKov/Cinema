@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import RegexValidator
+
 
 class user(models.Model):
     unic_user_id=models.CharField(max_length=120)

@@ -43,53 +43,54 @@
 <div class="login-wrapper" id="login-content">
     <div class="login-content">
         <a href="#" class="close">x</a>
-				<h3>Login</h3>
+        <h3>Login</h3>
 				{% if form.errors %}
-			    <p>Your username and password didn't match. Please try again.</p>
-			  {% endif %}
+				<p>Error</p>
+				{% endif %}
+        <form method="post" action="{% url 'login' %}">
+					{% csrf_token %}
 
-			  {% if next %}
-			    {% if user.is_authenticated %}
-			      <p>Your account doesn't have access to this page. To proceed,
-			      please login with an account that has access.</p>
-			    {% else %}
-			      <p>Please login to see this page.</p>
-			    {% endif %}
-			  {% endif %}
+        	<div class="row">
+        		 <label for="username">
+										<p> Username : {{ form.username }}</p>
+                    <input type="text" name="username" id="username" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+                </label>
+        	</div>
 
-			  <form method="post" action="{% url 'login' %}">
-			    {% csrf_token %}
-			    <table>
-			      <tr>
-			        <td>{{ form.username.label_tag }}</td>
-			        <td>{{ form.username }}</td>
-			      </tr>
-			      <tr>
-			        <td>{{ form.password.label_tag }}</td>
-			        <td>{{ form.password }}</td>
-			      </tr>
-			    </table>
-			    <input type="submit" value="login" />
-			    <input type="hidden" name="next" value="{{ next }}" />
-			  </form>
-
-			  {# Assumes you setup the password_reset view in your URLconf #}
-			  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-
+            <div class="row">
+            	<label for="password">
+                    	<p> Password : {{ form.password }}</p>
+                    <input type="password" name="password" id="password" placeholder="******" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+                </label>
+            </div>
+            <div class="row">
+            	<div class="remember">
+					<div>
+						<input type="checkbox" name="remember" value="Remember me"><span>Remember me</span>
+					</div>
+            		<a href="#">Forget password ?</a>
+            	</div>
+            </div>
+           <div class="row">
+           	 <button type="submit">Login</button>
+           </div>
+        </form>
+        <div class="row">
+        	<p>Or via social</p>
+            <div class="social-btn-2">
+            	<a class="fb" href="#"><i class="ion-social-facebook"></i>Facebook</a>
+            	<a class="tw" href="#"><i class="ion-social-twitter"></i>twitter</a>
+            </div>
+        </div>
     </div>
 </div>
-<!-- end of login form popup -->
+<!--end of login form popup-->
 <!--signup form popup-->
 <div class="login-wrapper"  id="signup-content">
     <div class="login-content">
         <a href="#" class="close">x</a>
         <h3>sign up</h3>
-				<form method="post" action="">
-					{% csrf_token %}
-					{% if form.errors %}
-					<p>Some errors in the form</p>
-					{% endif %}
-					{{ form }}
+        <form method="post" action="#">
             <div class="row">
                  <label for="username-2">
                     Username:
@@ -116,7 +117,7 @@
                 </label>
             </div>
            <div class="row">
-             <button type="submit" value='Register'>sign up</button>
+             <button type="submit">sign up</button>
            </div>
         </form>
     </div>

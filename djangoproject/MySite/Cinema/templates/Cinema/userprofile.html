@@ -23,16 +23,16 @@
 	<!-- Mobile specific meta -->
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone-no">
-
-	<!-- CSS files -->
-	<link rel="stylesheet" href="css/plugins.css">
-	<link rel="stylesheet" href="css/style.css">
+	{% load staticfiles %}
+		<!-- CSS files -->
+		<link rel="stylesheet" href="{% static 'css/plugins.css' %}" type="text/css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
 </head>
 <body>
 <!--preloading-->
 <div id="preloader">
-    <img class="logo" src="images/logo1.png" alt="" width="119" height="58">
+    <img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58">
     <div id="status">
         <span></span>
         <span></span>
@@ -51,7 +51,7 @@
                     <input type="text" name="username" id="username" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
         	</div>
-           
+
             <div class="row">
             	<label for="password">
                     Password:
@@ -92,7 +92,7 @@
                     <input type="text" name="username" id="username-2" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
             </div>
-           
+
             <div class="row">
                 <label for="email-2">
                     your email:
@@ -133,7 +133,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="index-2.html"><img class="logo" src="images/logo1.png" alt="" width="119" height="58"></a>
+				    <a href="index-2.html"><img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -162,7 +162,7 @@
 										<li><a href="moviegrid.html">Movie grid</a></li>
 										<li><a href="moviegridfw.html">movie grid full width</a></li>
 									</ul>
-								</li>			
+								</li>
 								<li><a href="movielist.html">Movie list</a></li>
 								<li><a href="moviesingle.html">Movie single</a></li>
 								<li class="it-last"><a href="seriessingle.html">Series single</a></li>
@@ -211,7 +211,7 @@
 								<li><a href="404.html">404 Page</a></li>
 								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
 							</ul>
-						</li>                
+						</li>
 						<li><a href="#">Help</a></li>
 						<li class="loginLink"><a href="#">LOG In</a></li>
 						<li class="btn signupLink"><a href="#">sign up</a></li>
@@ -219,7 +219,7 @@
 				</div>
 			<!-- /.navbar-collapse -->
 	    </nav>
-	    
+
 	    <!-- top search form -->
 	    <div class="top-search">
 	    	<select>
@@ -253,7 +253,7 @@
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="user-information">
 					<div class="user-img">
-						<a href="#"><img src="images/uploads/user-img.png" alt=""><br></a>
+						<a href="#"><img src="{% static 'images/uploads/user-img.png' %}" alt=""><br></a>
 						<a href="#" class="redbtn">Change avatar</a>
 					</div>
 					<div class="user-fav">
@@ -317,7 +317,7 @@
 							<div class="col-md-2">
 								<input class="submit" type="submit" value="save">
 							</div>
-						</div>	
+						</div>
 					</form>
 					<form action="#" class="password">
 						<h4>02. Change password</h4>
@@ -343,7 +343,7 @@
 							<div class="col-md-2">
 								<input class="submit" type="submit" value="change">
 							</div>
-						</div>	
+						</div>
 					</form>
 				</div>
 			</div>
@@ -355,7 +355,7 @@
 	<div class="container">
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
-				 <a href="index-2.html"><img class="logo" src="images/logo1.png" alt=""></a>
+				 <a href="index-2.html"><img class="logo" src="{% static 'images/logo1.png' %}" alt=""></a>
 				 <p>5th Avenue st, manhattan<br>
 				New York, NY 10001</p>
 				<p>Call us: <a href="#">(+01) 202 342 6789</a></p>
@@ -363,7 +363,7 @@
 			<div class="flex-child-ft item2">
 				<h4>Resources</h4>
 				<ul>
-					<li><a href="#">About</a></li> 
+					<li><a href="#">About</a></li>
 					<li><a href="#">Blockbuster</a></li>
 					<li><a href="#">Contact Us</a></li>
 					<li><a href="#">Forums</a></li>
@@ -374,16 +374,16 @@
 			<div class="flex-child-ft item3">
 				<h4>Legal</h4>
 				<ul>
-					<li><a href="#">Terms of Use</a></li> 
-					<li><a href="#">Privacy Policy</a></li>	
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy Policy</a></li>
 					<li><a href="#">Security</a></li>
 				</ul>
 			</div>
 			<div class="flex-child-ft item4">
 				<h4>Account</h4>
 				<ul>
-					<li><a href="#">My Account</a></li> 
-					<li><a href="#">Watchlist</a></li>	
+					<li><a href="#">My Account</a></li>
+					<li><a href="#">Watchlist</a></li>
 					<li><a href="#">Collections</a></li>
 					<li><a href="#">User Guide</a></li>
 				</ul>
@@ -408,11 +408,10 @@
 	</div>
 </footer>
 <!-- end of footer section-->
-
-<script src="js/jquery.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/plugins2.js"></script>
-<script src="js/custom.js"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/plugins2.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 <!-- userprofile14:04-->

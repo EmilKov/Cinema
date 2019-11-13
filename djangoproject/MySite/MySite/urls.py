@@ -23,4 +23,5 @@ urlpatterns = [
     # path('movies/', include('movies.urls')),
     # path('user/',include('Cinema.urls')),
     path('', include('Cinema.urls')),
+
 ]
