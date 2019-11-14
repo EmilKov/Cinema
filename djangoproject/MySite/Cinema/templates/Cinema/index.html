@@ -42,39 +42,7 @@
 <!--login form popup-->
 <div class="login-wrapper" id="login-content">
     <div class="login-content">
-        <a href="#" class="close">x</a>
-				<h3>Login</h3>
-				{% if form.errors %}
-			    <p>Your username and password didn't match. Please try again.</p>
-			  {% endif %}
 
-			  {% if next %}
-			    {% if user.is_authenticated %}
-			      <p>Your account doesn't have access to this page. To proceed,
-			      please login with an account that has access.</p>
-			    {% else %}
-			      <p>Please login to see this page.</p>
-			    {% endif %}
-			  {% endif %}
-
-			  <form method="post" action="{% url 'login' %}">
-			    {% csrf_token %}
-			    <table>
-			      <tr>
-			        <td>{{ form.username.label_tag }}</td>
-			        <td>{{ form.username }}</td>
-			      </tr>
-			      <tr>
-			        <td>{{ form.password.label_tag }}</td>
-			        <td>{{ form.password }}</td>
-			      </tr>
-			    </table>
-			    <input type="submit" value="login" />
-			    <input type="hidden" name="next" value="{{ next }}" />
-			  </form>
-
-			  {# Assumes you setup the password_reset view in your URLconf #}
-			  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
 
     </div>
 </div>
@@ -218,7 +186,7 @@
 							</ul>
 						</li>
 						<li><a href="#">Help</a></li>
-						<li class="loginLink"><a href="#">LOG In</a></li>
+						<li class="loginLink"><a href="/login">LOG In</a></li>
 						<li class="btn signupLink"><a href="#">sign up</a></li>
 					</ul>
 				</div>
@@ -1041,7 +1009,8 @@
 				</div>
 				<div class="videos">
 				 	<div class="slider-for-2 video-ft">
-					   
+
+
 					</div>
 					<div class="slider-nav-2 thumb-ft">
 						<div class="item">

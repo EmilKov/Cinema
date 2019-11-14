@@ -25,7 +25,7 @@ urlpatterns = [
     # path('register/', views.register,name='register'),
     # path('login/', include('django.contrib.auth.urls')),
     # path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('account/', include('django.contrib.auth.urls')),
-    # path('register/',views.RegisterFormView.as_view()),
-    # path('login/',views.LoginFormView.as_view()),
+    # path('account/', include('django.contrib.auth.urls')),
+    path('register/',views.RegisterFormView.as_view()),
+    path('login/',views.LoginFormView.as_view()),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
