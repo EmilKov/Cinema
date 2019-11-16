@@ -25,6 +25,7 @@
 	<meta name="format-detection" content="telephone-no">
 	{% load staticfiles %}
 		<!-- CSS files -->
+		<link rel="stylesheet" href="{% static 'css/buttons.css' %}" type="text/css">
 		<link rel="stylesheet" href="{% static 'css/plugins.css' %}" type="text/css">
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
@@ -40,55 +41,10 @@
 </div>
 <!--end of preloading-->
 <!--login form popup-->
-<div class="login-wrapper" id="login-content">
-    <div class="login-content">
 
 
-    </div>
-</div>
 <!-- end of login form popup -->
 <!--signup form popup-->
-<div class="login-wrapper"  id="signup-content">
-    <div class="login-content">
-        <a href="#" class="close">x</a>
-        <h3>sign up</h3>
-				<form method="post" action="">
-					{% csrf_token %}
-					{% if form.errors %}
-					<p>Some errors in the form</p>
-					{% endif %}
-					{{ form }}
-            <div class="row">
-                 <label for="username-2">
-                    Username:
-                    <input type="text" name="username" id="username-2" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
-                </label>
-            </div>
-
-            <div class="row">
-                <label for="email-2">
-                    your email:
-                    <input type="password" name="email" id="email-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
-                </label>
-            </div>
-             <div class="row">
-                <label for="password-2">
-                    Password:
-                    <input type="password" name="password" id="password-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
-                </label>
-            </div>
-             <div class="row">
-                <label for="repassword-2">
-                    re-type Password:
-                    <input type="password" name="password" id="repassword-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
-                </label>
-            </div>
-           <div class="row">
-             <button type="submit" value='Register'>sign up</button>
-           </div>
-        </form>
-    </div>
-</div>
 <!--end of signup form popup-->
 
 <!-- BEGIN | Header -->
@@ -118,9 +74,8 @@
 							Home <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="index-2.html">Home 01</a></li>
-								<li><a href="homev2.html">Home 02</a></li>
-								<li><a href="homev3.html">Home 03</a></li>
+								<li><a href="/">Home 01</a></li>
+
 							</ul>
 						</li>
 						<li class="dropdown first">
@@ -186,8 +141,18 @@
 							</ul>
 						</li>
 						<li><a href="#">Help</a></li>
-						<li class="loginLink"><a href="/login">LOG In</a></li>
-						<li class="btn signupLink"><a href="#">sign up</a></li>
+						<div class="col-md-7 col-sm-7 mx-auto text-center">
+
+						<a href="/login"><button class="btn1 btn-light btn-sm" href="/login">Log In</button></a>
+					</div>
+					<div>
+ 					 	<a href="/register"><button class="btn1 btn-danger btn-sm" href="/register">SignUp</button></a>
+						 </div>
+						<!-- <button type="button" class="btn1 btn-success btn-sm">success</button>
+						<button type="button" class="btn1 btn-danger btn-sm">Sign Up</button> -->
+						<!-- <li class="btn1	 btn-success btn-sm" ><a href="#">LOG In</a></li> -->
+						<!-- <li class="signupLink"><a href="#">sign up</a></li> -->
+
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->
@@ -1009,12 +974,16 @@
 				</div>
 				<div class="videos">
 				 	<div class="slider-for-2 video-ft">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/NP-_x8XlR-M" frameborder="0" allowfullscreen></iframe>
-						<!-- <div>
-								<iframe src="https://www.youtube.com/embed/1Q8fG0TtVAY" frameborder="0" allowfullscreen></iframe>
-							</div>
-						 -->
-					</div>
+						<div>
+							<iframe src="https://player.vimeo.com/video/190175415" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+							<p><a href="https://vimeo.com/190175415">Wonder Woman - Official Trailer</a> from <a href="https://vimeo.com/2wei">2WEI</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+						</div>
+						<div>
+							<iframe src="https://player.vimeo.com/video/63640110" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+							<p><a href="https://vimeo.com/63640110">Oblivion Trailer</a> from <a href="https://vimeo.com/blokely">Blokely.com | Founder Blokely</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+						</div>
+
+			</div>
 					<div class="slider-nav-2 thumb-ft">
 						<div class="item">
 							<div class="trailer-img">

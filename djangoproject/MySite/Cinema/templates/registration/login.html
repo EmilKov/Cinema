@@ -39,7 +39,6 @@
 						{% csrf_token %}
 						<!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
 						{{ form.as_p }}
-						<button type="submit">Зарегистрироваться</button>
 					<!-- <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
@@ -58,7 +57,7 @@
 					</div> -->
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type="submit">
 							Login
 						</button>
 					</div>

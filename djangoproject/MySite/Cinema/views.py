@@ -47,33 +47,3 @@ class LoginFormView(FormView):
         # Выполняем аутентификацию пользователя.
         login(self.request, self.user)
         return super(LoginFormView, self).form_valid(form)
-# def my_view(request):
-#     username = request.POST['username']
-#     password = request.POST['password']
-#     user = authenticate(username=username, password=password)
-#     if user is not None:
-#         if user.is_active:
-#             login(request, user)
-#             # Redirect to a success page.
-#         else:
-#             # Return a 'disabled account' error message
-#             ...
-#     else:
-#         # Return an 'invalid login' error message.
-#         ...
-
-
-# def register(request):
-#     if request.method=='POST':
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             username=form.cleaned_data['username']
-#             password=form.cleaned_data['password1']
-#             user=authenticate(username=username,password=password)
-#             login(request,user)
-#             return redirect('index')
-#     else:
-#         form=UserCreationForm()
-#     context={'form':form}
-#     return render(request,'index.html',context)
