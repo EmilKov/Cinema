@@ -26,6 +26,9 @@ urlpatterns = [
     # path('login/', include('django.contrib.auth.urls')),
     # path('login/', auth_views.LoginView.as_view(), name='login'),
     # path('account/', include('django.contrib.auth.urls')),
-    path('register/',views.RegisterFormView.as_view()),
-    path('login/',views.LoginFormView.as_view()),
+    path('register/',views.RegisterFormView.as_view(),name='signup'),
+    path('login/',views.LoginFormView.as_view(),name='login'),
+    # path('logout/',views.logout, {'template_name': 'logged_out.html'}, name='logout'),
+    # path('logout/', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='user_logout'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
