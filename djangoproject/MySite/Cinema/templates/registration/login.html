@@ -3,6 +3,8 @@
   <html lang="en">
   <head>
   	<title>Login V1</title>
+    {% load socialaccount %}
+    {% providers_media_js %}
   		{% load staticfiles %}
   	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +23,7 @@
   <!--===============================================================================================-->
   	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
   	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+		<link rel="stylesheet" href="{% static 'css/buttons.css' %}" type="text/css">
   <!--===============================================================================================-->
   <style type="text/css">
    TD.leftcol {
@@ -59,13 +62,21 @@
                     {% endfor %}
                   </p>
                 {% endfor %}
+
+
                 <button class="login100-form-btn"type="submit">
                   Login
                 </button>
+
+
               </form>
+              <br>
+              <a href="{% provider_login_url 'google' %}"><button class="btn1 btn-dark btn-sm" href="{% provider_login_url 'google' %}">Google Connect</button></a>
+
               </td>
              </tr>
             </table>
+
 
   					<!-- <div class="text-center p-t-12">
   						<span class="txt1">

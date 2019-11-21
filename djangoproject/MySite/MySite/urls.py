@@ -19,7 +19,6 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from . import settings
 urlpatterns = [
-    path('socialnetworks/', TemplateView.as_view(template_name="login/index.html")),
     path('articles/', include('articles.urls')),
     path('admin/', admin.site.urls),
     path('movies/', include('movies.urls')),
