@@ -20,7 +20,7 @@ urlpatterns = [
     DetailView.as_view(model=Articles,
     template_name="Cinema/moviesingle.html")),
 
-    path('user/<int:pk>/',
+    path('user/',
     DetailView.as_view(model=user,
     template_name="Cinema/userprofile.html")),
     # path('register/', views.register,name='register'),
