@@ -4,6 +4,9 @@ from django.contrib.auth import authenticate, login
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import AuthenticationForm
 # Create your views here.
+from django.shortcuts import render, redirect
+from .models import Profile
+
 def index(request):
     return render(request,'Cinema/index.html')
 def movielist(request):
@@ -11,7 +14,16 @@ def movielist(request):
 def moviesingle(request):
     return render(request,'Cinema/moviesingle.html')
 def user(request):
-    return render(request,'Cinema/userprofile.html')
+    return render(request,'registration/userprofile.html')
+# def upload_pic(request):
+#     if request.method == 'POST':
+#         form = ImageUploadForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             m = Profile.objects.get(pk=course_id)
+#             m.model_pic = form.cleaned_data['image']
+#             m.save()
+#             return HttpResponse('image upload success')
+#     return HttpResponseForbidden('allowed only via POST')
 class RegisterFormView(FormView):
     form_class = UserCreationForm
 
