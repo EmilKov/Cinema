@@ -50,7 +50,7 @@ def get_suggests(request, model, page):
             pages.append(i)
     data = {'items': objects[10 * (page - 1):last_item_index], 'current_page': page, 'page_number': total_page,
             'pages': pages}
-    return render(request, 'Cinema/{}_list.html'.format(model.get_name()), data)
+    return render(request, 'Cinema/oh ma.html', data)
 
 def index(request):
     return render(request,'Cinema/index.html')
