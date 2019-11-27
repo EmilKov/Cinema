@@ -31,15 +31,23 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 #         user_profile = UserProfile.objects.create(user=kwargs['instance'])
 #
 # post_save.connect(create_user_profile, sender=User)
-class Articles(models.Model):
-    title=models.CharField(max_length=120)
-    post=models.TextField()
-    date=models.DateTimeField()
-    rating=models.CharField(max_length=120)
-    cover = models.ImageField(upload_to='images/')
-    def __str__(self):
-        return self.title
+class Movie(models.Model):
+    movieid = models.CharField(max_length=20, primary_key=True)
+    title = models.CharField(max_length=30)
+    year = models.CharField(max_length=4)
+    length = models.CharField(max_length=10)
+    genres = models.CharField(max_length=100)
+    rate = models.IntegerField(default=0)
+    poster = models.URLField(default='')
+    plot = models.CharField(max_length=500)
+    trailer = models.URLField(default='')
 
+    def __str__(self):
+        return self.movieid + '|' + self.title
+
+    @staticmethod
+    def get_name():
+        return 'movie'
 
 # from django.db import models
 # import datetime
