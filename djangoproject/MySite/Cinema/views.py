@@ -45,10 +45,10 @@ def get_suggests(request, model, page):
     # genre = Movie.genres
     # rating = Movie.rate
 
-    total_page = int(ceil(len(objects) / 10))
+    total_page = int(ceil(len(objects) / 1001))
         # if page > total_page:
         #     return render(request, 'Cinema/404.html')
-    last_item_index = 10 * page if page != total_page else len(objects)
+    last_item_index = 500 * page if page != total_page else len(objects)
     pages = []
     end_distance = total_page - page
     start_page_num = page - 5 if end_distance >= 5 else page - 10 + end_distance
