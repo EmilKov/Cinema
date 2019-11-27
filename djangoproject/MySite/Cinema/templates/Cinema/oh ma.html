@@ -54,7 +54,10 @@
 			        {% endif %}
 
 
+
 			        {% for item in items %}
+						{% if item.rate > 7.9 %}
+							<h6>{{item.rate}}</h6>
 							<div class="movie-item-style-2">
 								<img src="{{ item.poster }}" alt="">
 								<div class="mv-item-infor">
@@ -71,11 +74,12 @@
 									</details>
 								</div>
 							</div>
+						{% endif %}
+					{% endfor %}
 
 
 
 
-			        {% endfor %}
 
 			        {% if pages %}
 			            <p>You are in the {{ current_page }} page, {{ page_number }} pages in total</p>

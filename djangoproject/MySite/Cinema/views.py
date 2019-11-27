@@ -8,6 +8,10 @@ from django.shortcuts import render, redirect
 from . import *
 import math
 from math import *
+from django.apps import apps
+from .models import Movie
+
+
 def whole_list(request, model, page):
     if page == '':
         page = 1
@@ -36,6 +40,10 @@ def get_suggests(request, model, page):
         page = 1
     page = int(page)
     objects = model.objects.all()
+
+    # MovieModel = apps.get_model('Cinema', 'Movie')
+    # genre = Movie.genres
+    # rating = Movie.rate
 
     total_page = int(ceil(len(objects) / 10))
         # if page > total_page:

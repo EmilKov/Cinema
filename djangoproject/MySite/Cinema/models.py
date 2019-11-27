@@ -52,6 +52,13 @@ class Movie(models.Model):
     def __str__(self):
         return self.movieid + '|' + self.title
 
+
+    def get_highrating(self):
+        if self.rate > 8:
+            print(self.rate)
+            return self
+
+
     @staticmethod
     def get_name():
         return 'movie'
