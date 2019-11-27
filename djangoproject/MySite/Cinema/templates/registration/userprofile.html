@@ -27,7 +27,13 @@
 		<!-- CSS files -->
 		<link rel="stylesheet" href="{% static 'css/plugins.css' %}" type="text/css">
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-
+<style	>
+.round {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+ }
+</style>
 </head>
 <body>
 <!--preloading-->
@@ -237,7 +243,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-					<h1>Edward kennedy’s profile</h1>
+
+					<h1>{{ user.username }}'s profile</h1>
 					<ul class="breadcumb">
 						<li class="active"><a href="#">Home</a></li>
 						<li> <span class="ion-ios-arrow-right"></span>Profile</li>
@@ -253,8 +260,9 @@
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="user-information">
 					<div class="user-img">
-						<a href="#"><img src="{% static 'images/uploads/user-img.png' %}" alt=""><br></a>
-						<a href="#" class="redbtn">Change avatar</a>
+						<a href="#"><img src="{{ user.profile.image.url }}" alt="" class="round"><br></a>
+						<a href="#" class="redbtn" >Change avatar</a>
+
 					</div>
 					<div class="user-fav">
 						<p>Account Details</p>
@@ -279,6 +287,8 @@
 						<h4>01. Profile details</h4>
 						<div class="row">
 							<div class="col-md-6 form-it">
+
+
 								<label>Username</label>
 								<input type="text" placeholder="edwardkennedy">
 							</div>
