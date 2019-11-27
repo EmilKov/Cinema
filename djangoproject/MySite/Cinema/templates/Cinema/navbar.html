@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7 no-js" lang="en-US">
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8 no-js" lang="en-US">
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html lang="en" class="no-js">
 
 <!-- homev206:52-->
@@ -32,13 +25,13 @@
 </head>
 <body>
 <!--preloading-->
-<div id="preloader">
-    <img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58">
+<!-- <div id="preloader">
+    <img class="logo" src="{% static 'images/logo3.png' %}" alt="" width="119" height="58">
     <div id="status">
         <span></span>
         <span></span>
     </div>
-</div>
+</div> -->
 <!--end of preloading-->
 <!--login form popup-->
 
@@ -61,7 +54,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="/index"><img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58"></a>
+				    <!-- <a href="/"><img class="logo" src="{% static 'images/logo3.png' %}" alt="" width="100" height="30"></a> -->
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -69,44 +62,19 @@
 						<li class="hidden">
 							<a href="#page-top"></a>
 						</li>
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							Home <i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="/">Home 01</a></li>
 
-							</ul>
-						</li>
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							movies<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<!-- <li class="dropdown">
-									<a href="#">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-									<ul class="dropdown-menu level2">
-										<li><a href="aboutv1.html">About Us 01</a></li>
-										<li><a href="aboutv2.html">About Us 02</a></li>
-									</ul>
-								</li> -->
 								<li><a href="moviegrid.html">Movie grid</a></li>
 								<li><a href="moviegridfw.html">movie grid full width</a></li>
 								<li><a href="/movielist">Movie list</a></li>
 								<li class="it-last"><a href="moviesingle.html">Movie single</a></li>
 							</ul>
 						</li>
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							celebrities <i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="celebritygrid01.html">celebrity grid 01</a></li>
-								<li><a href="celebritygrid02.html">celebrity grid 02 </a></li>
-								<li><a href="celebritylist.html">celebrity list</a></li>
-								<li class="it-last"><a href="celebritysingle.html">celebrity single</a></li>
-							</ul>
-						</li>
+
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							news <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -128,7 +96,9 @@
 								<li class="it-last"><a href="userrate.html">user rate</a></li>
 							</ul>
 						</li>
+
 					</ul>
+
 					<ul class="nav navbar-nav flex-child-menu menu-right">
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
@@ -146,15 +116,18 @@
 							{% endif %}
 						<div class="col-md-7 col-sm-7 mx-auto text-center">
 							{% if user.is_authenticated %}
-								<a href="/logout"><button class="btn1 btn-light btn-sm" href="/logout">Log out</button></a>
+								<a href="/logout"><button class="btn1 btn-dark btn-sm" href="/logout">Log out</button></a>
 							{% else %}
-							  <p>You are not logged in</p>
-							  <a href="/login"><button class="btn1 btn-light btn-sm" href="/login">Log In</button></a>
+							  <a href="/login"><button class="btn1 btn-info btn-sm" href="/login">Log In</button></a>
 							{% endif %}
 
 					</div>
 					<div>
+            {% if user.is_authenticated %}
+            <a href="user/"><button class="btn1 btn-success btn-sm" href="/register">Account</button></a>
+            {% else %}
  					 	<a href="/register"><button class="btn1 btn-danger btn-sm" href="/register">SignUp</button></a>
+            {% endif %}
 						 </div>
 						<!-- <button type="button" class="btn1 btn-success btn-sm">success</button>
 						<button type="button" class="btn1 btn-danger btn-sm">Sign Up</button> -->
@@ -184,13 +157,13 @@
 
 
 {% endblock %}
-<!--end of latest new v2 section-->
+
 <!-- footer v2 section-->
 <footer class="ht-footer full-width-ft">
 	<div class="row">
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
-				 <a href="index-2.html"><img class="logo" src="{% static 'images/logo1.png' %}" alt=""></a>
+				 <!-- <a href="index-2.html"><img class="logo" src="{% static 'images/logo3.png' %}" alt=""></a> -->
 				 <p>5th Avenue st, manhattan<br>
 				New York, NY 10001</p>
 				<p>Call us: <a href="#">(+01) 202 342 6789</a></p>
