@@ -6,7 +6,7 @@ from Cinema.models import Profile
 
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-
+#
 class ProfileInline(admin.StackedInline):
     model = Profile
     can_delete = False

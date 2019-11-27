@@ -5,32 +5,39 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
 from django.dispatch import receiver
-# class ExampleModel(models.Model):
-#     model_pic = models.ImageField(upload_to = 'profile_image2')
-
+# User.objects.filter(field_name=first_name)
 class Profile(models.Model):
-    user = models.OneToOneField(User,on_delete=models.PROTECT)
-    # description = models.CharField(max_length=100, default='')
+    user = models.OneToOneField(User,on_delete=models.CASCADE, unique=True, primary_key=True, default=None)
+    description = models.CharField(max_length=100, default='')
     city = models.CharField(max_length=100, default='')
-    # website = models.URLField(default='')
+    website = models.URLField(default='')
     phone = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='profile_image', blank=True)
+    image = models.ImageField(upload_to='profile_image', blank=True,)
     objects = models.Manager()
+    def delete_user(self):
+        self.User.delete()
 
-    def __str__(self):
-        return self.user.username
+        # def __str__(self):
+        #     return self.user.username
+    # def delete(self, *args, **kwargs):
+    #     self.user.delete()
+    #     return super(self.__class__, self).delete(*args, **kwargs)
 
-@receiver(post_save, sender=User)
-def create_or_update_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-    instance.profile.save()
+# @receiver(post_delete, sender=Profile)
+# def post_delete_user(sender, instance, *args, **kwargs):
+#     if instance.user: # just in case user is not specified
+#         instance.user.delete()
+# @receiver(post_save, sender=User)
+# def create_or_update_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(user=instance)
+#     instance.profile.save()
 
-# def create_profile(sender, **kwargs):
-#     if kwargs['created']:
-#         user_profile = UserProfile.objects.create(user=kwargs['instance'])
-#
-# post_save.connect(create_user_profile, sender=User)
+def create_profile(sender, **kwargs):
+    if kwargs['created']:
+        user_profile = UserProfile.objects.create(user=kwargs['instance'])
+
+
 class Movie(models.Model):
     movieid = models.CharField(max_length=20, primary_key=True)
     title = models.CharField(max_length=30)
@@ -48,6 +55,28 @@ class Movie(models.Model):
     @staticmethod
     def get_name():
         return 'movie'
+
+
+def get_list_or_404(klass, *args, **kwargs):
+    """
+    Use filter() to return a list of objects, or raise a Http404 exception if
+    the list is empty.
+    klass may be a Model, Manager, or QuerySet object. All other passed
+    arguments and keyword arguments are used in the filter() query.
+    """
+    queryset = _get_queryset(klass)
+    if not hasattr(queryset, 'filter'):
+        klass__name = klass.__name__ if isinstance(klass, type) else klass.__class__.__name__
+        raise ValueError(
+            "First argument to get_list_or_404() must be a Model, Manager, or "
+            "QuerySet, not '%s'." % klass__name
+        )
+    obj_list = list(queryset.filter(*args, **kwargs))
+    if not obj_list:
+        raise Http404('No %s matches the given query.' % queryset.model._meta.object_name)
+    return obj_list
+
+
 
 # from django.db import models
 # import datetime
