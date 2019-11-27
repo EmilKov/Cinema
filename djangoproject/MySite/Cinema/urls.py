@@ -26,5 +26,5 @@ urlpatterns = [
     path('register/',views.RegisterFormView.as_view(),name='signup'),
     path('login/',views.LoginFormView.as_view(),name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('sl/', TemplateView.as_view(template_name="logins/index.html")),\
+    path('accounts/', TemplateView.as_view(template_name="logins/index.html")),\
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
