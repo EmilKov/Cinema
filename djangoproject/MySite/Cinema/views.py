@@ -110,10 +110,6 @@ def index(request):
     return render(request, 'Cinema/index.html')
 
 
-def news(request):
-    return render(request, 'Cinema/bloglist.html')
-
-
 def movielist(request):
     return render(request, 'Cinema/movielist1.html')
 
@@ -152,7 +148,6 @@ class RegisterFormView(FormView):
 
         # Вызываем метод базового класса
         return super(RegisterFormView, self).form_valid(form)
-
 
 
 #

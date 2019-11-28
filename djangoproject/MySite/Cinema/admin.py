@@ -1,12 +1,12 @@
 from django.contrib import admin
+from Cinema.models import *
 # Register your models here.
+admin.site.register(Movie)
+from Cinema.models import Profile
 
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-
-from .models import *
-
-
+#
 class ProfileInline(admin.StackedInline):
     model = Profile
     can_delete = False
@@ -22,13 +22,7 @@ class CustomUserAdmin(UserAdmin):
         return super(CustomUserAdmin, self).get_inline_instances(request, obj)
 
 
-admin.site.register(Movie)
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 
-'''
-admin.site.register(Article)
-admin.site.register(Editor)
-admin.site.register(Comment)
-'''
 # admin.site.register(ExampleModel)
