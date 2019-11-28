@@ -4,6 +4,7 @@
 
 <!-- homev206:52-->
 <head>
+
 	<!-- Basic need -->
 	<title>Open Pediatrics</title>
 	<meta charset="UTF-8">
@@ -28,6 +29,7 @@
 
 
 <style>
+
 #topcontrol{z-index: 9999;}
 #topcontrol{margin-bottom: 50px;}
 .go-top {
@@ -67,7 +69,10 @@
 
 <!-- BEGIN | Header -->
 <header class="ht-header full-width-hd">
+	<!-- <div class="buster-light"> -->
+
 		<div class="row">
+
 			<nav id="mainNav" class="navbar navbar-default navbar-custom">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header logo">
@@ -166,6 +171,7 @@
 				</div>
 			<!-- /.navbar-collapse -->
 	    </nav>
+
 	    <!-- search form -->
       <form class="top-search" action="{% url 'search' %}" method="post">
         <select>
@@ -179,16 +185,19 @@
       </form>
   </div>
 		</div>
-
 </header>
-<!-- END | Header -->
 
+<!-- END | Header -->
+{% csrf_token %}
+{% if user.profile.WhiteTheme == True %}
+	<div class="buster-light">
+{% endif %}
 {% block mainbody %}
     {% load staticfiles %}
 
 
 {% endblock %}
-
+</div>
 <!-- footer v2 section-->
 <footer class="ht-footer full-width-ft">
 	<div class="row">

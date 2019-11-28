@@ -14,6 +14,7 @@ class Profile(models.Model):
     city = models.CharField(max_length=100, default='')
     website = models.URLField(default='')
     phone = models.IntegerField(default=0)
+    WhiteTheme = models.BooleanField(default=False)
     image = models.ImageField(upload_to='profile_image', blank=True,)
     objects = models.Manager()
     def delete_user(self):
