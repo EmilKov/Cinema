@@ -79,18 +79,7 @@
 			                <a href="{{ current_page|add:-1 }}" target="_self">Previous</a>
 			            {% endif %}
 
-			            {% for page in pages %}
-			                {% if page == current_page %}
-			                    <b>{{ page }}</b>
-			                {% else %}
-			                    <a href="{{ page }}" target="_self">{{ page }}</a>
-			                {% endif %}
-			            {% endfor %}
 
-			            {% if current_page != page_number %}
-			                <a href="{{ current_page|add:1 }}" target="_self">Next</a>
-			                <a href="{{ page_number }}" target="_self">Last</a>
-			            {% endif %}
 			        {% endif %}
 
 			        <script>
