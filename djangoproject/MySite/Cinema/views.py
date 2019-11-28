@@ -12,6 +12,29 @@ from math import *
 from django.apps import apps
 from .models import Movie
 
+def search(request):
+    try:
+        if request.method == "POST":
+            article_text = request.POST.get("search_field")
+            if len(article_text) > 0:
+                search_res = Movie.objects.filter(plot__contains=article_text)
+
+                # print(search_res)
+                # return render(request, "Cinema/movielist2.html",
+                #               {"search_res": search_res, "empty_res": "There is no article"})
+
+                # print(search_res,article_text)
+                return render(request, "Cinema/search.html",
+                              {"search_res": search_res, "empty_res": "There is no article",
+                               'article_text': article_text})
+
+            elif len(article_text)==0:
+                return render(request, 'Cinema/index.html')
+
+    except:
+        print("Salam")
+        return render(request, "Cinema/search.html", {"empty_res": "There is no article"},)
+
 def whole_list(request, model, page):
     if page == '':
         page = 1
@@ -194,26 +217,3 @@ class TemplateView(FormView):
 
 def news(request):
     return render(request, 'Cinema/bloglist.html')
-
-def search(request):
-    try:
-        if request.method == "POST":
-            article_text = request.POST.get("search_field")
-            if len(article_text) > 0:
-                search_res = Movie.objects.filter(plot__contains=article_text)
-
-                # print(search_res)
-                # return render(request, "Cinema/movielist2.html",
-                #               {"search_res": search_res, "empty_res": "There is no article"})
-
-                print(search_res,article_text)
-                return render(request, "Cinema/search.html",
-                              {"search_res": search_res, "empty_res": "There is no article",
-                               'article_text': article_text})
-
-            elif len(article_text)==0:
-                return render(request, 'Cinema/index.html')
-
-    except:
-        print("Salam")
-        return render(request, "Cinema/search.html", {"empty_res": "There is no article"})

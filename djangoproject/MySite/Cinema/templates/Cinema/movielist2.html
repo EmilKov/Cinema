@@ -39,32 +39,22 @@
 
 
 
-			        {% if object %}
-			            <div id=detail-infro>
-			                <h1>{{ object.name }}</h1>
-			                <p><a href="http://www.imdb.com/name/{{ object.actorid }}" target="_self">See in IMDB</a></p>
-			            </div>
-			            <div id="main-pic">
-			                <!-- <img border="0" src="{{ object.photo }}" alt="Cannot load photo, sorry!" width="261" height="401"> -->
-			            </div>
-
-
-			            <h2>{{ object.name }} in the following movie(s):</h2>
-			            <hr>
-			        {% endif %}
 
 
 			        {% for item in items %}
 							<div class="movie-item-style-2">
-								<img src="{{ item.poster }}" alt="">
+								        <img src="{{ item.poster }}" alt="">
 								<div class="mv-item-infor">
-									<h6><a href="/moviesingle/{{ item.movieid }}">{{ item.title }}<span>(2012)</span></a></h6>
+									<h6><a href="/moviesingle/{{ item.movieid }}">{{ item.title }}<span>({{ item.year }})</span></a></h6>
 									<p class="rate"><i class="ion-android-star"></i><span>{{ item.rate }}</span> /10</p>
 									<p class="describe">{{ item.title }}</p>
-									<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: {{ item.year }}</span></p>
-									<p>Director: <a href="#">Joss Whedon</a></p>
-									<p>Stars: <a href="#">Robert Downey Jr.,</a> <a href="#">Chris Evans,</a> <a href="#">  Chris Hemsworth</a></p>
-								</div>
+									<p class="run-time"> Run Time: {{ item.length }}    min<span>Genre(-s):  {{ item.genres }}</span></p>
+                  <br>
+                  <details>
+                    <summary><b>PLOT</b></summary>
+                    <p>{{ item.plot }}</p>
+                  </details>
+                </div>
 							</div>
 
 
@@ -95,46 +85,11 @@
 			        </script>
 			    </div>
 				</div>
-        {% for article in search_res%}
-          <ol>
-
-            <img src="{{ article.poster }}" alt="" width="201px" height="401px">
-            <li value="{{forloop.counter}}">
-              <a href="{% url 'moviesingle' article.movieid %}">
-              <p>{{article.title}}</p>
-            </a>
-            {{article.plot|truncatewords:10}}
-            </li>
-          </ol>
-          {%endfor%}
-
-				<div class="topbar-filter">
-					<label>Movies per page:</label>
-					<select>
-						<option value="range">5 Movies</option>
-						<option value="saab">10 Movies</option>
-					</select>
-					<div class="pagination2">
-						{% if pages %}
-						{% for page in pages %}
-								{% if page == current_page %}
-										<b>{{ page }}</b>
-								{% else %}
-										<a href="{{ page }}" target="_self">{{ page }}</a>
-								{% endif %}
-						{% endfor %}
-
-						{% if current_page != page_number %}
-								<a href="{{ current_page|add:1 }}" target="_self">Next</a>
-								<a href="{{ page_number }}" target="_self">Last</a>
-						{% endif %}
-				{% endif %}
+        {
 						<a href="#"><i class="ion-arrow-right-b"></i></a>
 					</div>
 				</div>
-			</div>
 
-		</div>
 <!-- footer section-->
 
 

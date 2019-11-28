@@ -8,7 +8,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-					<h1> search a movie</h1>
+          <br>
+					<h1> search in a Movie</h1>
 					<ul class="breadcumb">
 						<li class="active"><a href="#">Home</a></li>
 						<li> <span class="ion-ios-arrow-right"></span>  Search</li>
@@ -24,7 +25,10 @@
 		<div class="row ipad-width2">
 
 			<div class="col-md-8 col-sm-12 col-xs-12">
-        <p><b>You searched:</b> {{ article_text }}</p>
+
+
+        <h1 style="color:white;"><b>You searched:</b> {{ article_text }}</h1>
+
 				<div class="topbar-filter">
 					<p>Found <span>some films</span> in total</p>
 					<label>Sort by:</label>
@@ -36,37 +40,20 @@
 						<option value="date">Release date Descending</option>
 						<option value="date">Release date Ascending</option>
 					</select>
-					<a href="/movielist" class="list"><i class="ion-ios-list-outline active"></i></a>
-					<a  href="moviegrid.html" class="grid"><i class="ion-grid"></i></a>
+					<a href="#" class="list"><i class="ion-ios-list-outline active"></i></a>
 				</div>
 
-
-
-			        {% if object %}
-			            <div id=detail-infro>
-			                <h1>{{ object.name }}</h1>
-			                <p><a href="http://www.imdb.com/name/{{ object.actorid }}" target="_self">See in IMDB</a></p>
-			            </div>
-			            <div id="main-pic">
-			                <!-- <img border="0" src="{{ object.photo }}" alt="Cannot load photo, sorry!" width="261" height="401"> -->
-			            </div>
-
-
-			            <h2>{{ object.name }} in the following movie(s):</h2>
-			            <hr>
-			        {% endif %}
 
 
 
               {% if search_res %}
               {% for article in search_res%}
 
-              <a href="{% url 'moviesingle' article.movieid %}"><p>{{ forloop.counter }}</p></a>
-
             <div class="movie-item-style-2">
               <img src="{{ article.poster }}" alt="">
               <div class="mv-item-infor">
-                <h6><a href="moviesingle.html">{{ article.title }}<span>({{ article.year }})</span></a></h6>
+                <h6><a href="/moviesingle/{{ article.movieid }}">{{ forloop.counter }}</a></h6>
+                <h6><a href="/moviesingle/{{ article.movieid }}">{{ article.title }}<span>({{ article.year }})</span></a></h6>
                 <p class="rate"><i class="ion-android-star"></i><span>{{ article.rate }}</span> /10</p>
                 <p class="describe">{{ article.title }}</p>
                 <p class="run-time"> Run Time: {{ article.length }}    min<!--span>MMPA: PG-13 </span--><span>Genre(-s):  {{ article.genres }}</span></p>
@@ -78,8 +65,7 @@
               </div>
             </div>
 
-
-              {%endfor%}
+              {% endfor %}
             {% endif %}
 
 
