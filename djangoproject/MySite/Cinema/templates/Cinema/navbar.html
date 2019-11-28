@@ -93,10 +93,11 @@
 							movies<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="moviegrid.html">Movie grid</a></li>
-								<li><a href="moviegridfw.html">movie grid full width</a></li>
-								<li><a href="/movie_all/	">Movie list</a></li>
-								<li class="it-last"><a href="moviesingle.html">Movie single</a></li>
+								<li><a href="/moviegrid">Movie grid</a></li>
+								<li><a href="/movie_all/">Movie list</a></li>
+								<li><a href="/recommendation/decade/1">BEST MOVIES OF 2000-2010 YEARS</a></li>
+								<li><a href="/recommendations/1">HIGH RATED MOVIES</a></li>
+								<li class="it-last"><a href="/worstfilms/1">worstfilms</a></li>
 							</ul>
 						</li>
 
@@ -117,8 +118,8 @@
 							<ul class="dropdown-menu level1">
 								<li><a href="userfavoritegrid.html">user favorite grid</a></li>
 								<li><a href="userfavoritelist.html">user favorite list</a></li>
-								<li><a href="userprofile.html">user profile</a></li>
-								<li class="it-last"><a href="userrate.html">user rate</a></li>
+								<li><a href="userrate.html">user rate</a></li>
+
 							</ul>
 						</li>
 
@@ -141,20 +142,17 @@
 							</ul>
 						</li>
 						<li><a href="#">Help</a></li>
-						{% if user.is_authenticated %}
-							<p>Hello {{ user.first_name }}!</p>
-							{% endif %}
 						<div class="col-md-7 col-sm-7 mx-auto text-center">
 							{% if user.is_authenticated %}
 								<a href="/logout"><button class="btn1 btn-dark btn-sm" href="/logout">Log out</button></a>
 							{% else %}
-							  <a href="/login"><button class="btn1 btn-info btn-sm" href="/login">Log In</button></a>
+							  <a href="/login"><button class="btn1 btn-primary btn-sm" href="/login">Log In</button></a>
 							{% endif %}
 
 					</div>
 					<div>
             {% if user.is_authenticated %}
-            <a href="user/"><button class="btn1 btn-success btn-sm" href="/register">Account</button></a>
+            <a href="user/"><button class="btn1 btn-success btn-sm" href="/register">{{ user.username }}	</button></a>
             {% else %}
  					 	<a href="/register"><button class="btn1 btn-danger btn-sm" href="/register">SignUp</button></a>
             {% endif %}
@@ -176,7 +174,7 @@
       </select>
           {% csrf_token %}
       <input type="text" name="search_field" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
-				<button type="submit" class="btn1 btn-success btn-sm">Search</button>
+				<button type="submit" class="btn1 btn-warning btn-sm">Search</button>
           <!-- <input type="submit" name="Search" value="Search"> -->
       </form>
   </div>
@@ -204,12 +202,6 @@
 			<div class="flex-child-ft item2">
 				<h4>Resources</h4>
 				<ul>
-					<h2>username</h2>
-					{% if user.is_authenticated %}
-					<h2>Your name is: {{ user.username }}</h2>
-					{% else %}
-					<h2>You are not logged in </h2>
-					{% endif %}
 					<li><a href="#">About</a></li>
 					<li><a href="#">Blockbuster</a></li>
 					<li><a href="#">Contact Us</a></li>

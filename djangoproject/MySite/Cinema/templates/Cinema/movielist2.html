@@ -33,8 +33,8 @@
 						<option value="date">Release date Descending</option>
 						<option value="date">Release date Ascending</option>
 					</select>
-					<a href="/movielist" class="list"><i class="ion-ios-list-outline active"></i></a>
-					<a  href="moviegrid.html" class="grid"><i class="ion-grid"></i></a>
+					<a href="#" class="list"><i class="ion-ios-list-outline active"></i></a>
+					<a  href="/moviegrid/{{ current_page }}" class="grid"><i class="ion-grid"></i></a>
 				</div>
 
 
@@ -56,10 +56,6 @@
                   </details>
                 </div>
 							</div>
-
-
-
-
 			        {% endfor %}
 
 			        {% if pages %}
@@ -85,8 +81,31 @@
 			        </script>
 			    </div>
 				</div>
-        {
-						<a href="#"><i class="ion-arrow-right-b"></i></a>
+        <div class="topbar-filter">
+          <label>Movies per page:</label>
+          <select>
+            <option value="range">5 Movies</option>
+            <option value="saab">10 Movies</option>
+          </select>
+          <div class="pagination2">
+            {% if pages %}
+            {% for page in pages %}
+                {% if page == current_page %}
+                    <b>{{ page }}</b>
+                {% else %}
+                    <a href="{{ page }}" target="_self">{{ page }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if current_page != page_number %}
+                <a href="{{ current_page|add:1 }}" target="_self">Next</a>
+                <a href="{{ page_number }}" target="_self">Last</a>
+            {% endif %}
+        {% endif %}
+            <a href="#"><i class="ion-arrow-right-b"></i></a>
+          </div>
+        </div>
+
 					</div>
 				</div>
 
