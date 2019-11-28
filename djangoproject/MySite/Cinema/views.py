@@ -192,6 +192,8 @@ class TemplateView(FormView):
         # Вызываем метод базового класса
         return super(RegisterFormView, self).form_valid(form)
 
+def news(request):
+    return render(request, 'Cinema/bloglist.html')
 
 def search(request):
     try:
@@ -200,9 +202,9 @@ def search(request):
             if len(article_text) > 0:
                 search_res = Movie.objects.filter(plot__contains=article_text)
 
-                print(search_res)
-                return render(request, "Cinema/movielist2.html",
-                              {"search_res": search_res, "empty_res": "There is no article"})
+                # print(search_res)
+                # return render(request, "Cinema/movielist2.html",
+                #               {"search_res": search_res, "empty_res": "There is no article"})
 
                 print(search_res,article_text)
                 return render(request, "Cinema/search.html",
