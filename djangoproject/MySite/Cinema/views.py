@@ -153,6 +153,8 @@ def get_worstfilms(request,model,page):
 
 def index(request):
     return render(request, 'Cinema/index.html')
+def error404(request):
+    return render(request, 'Cinema/error404.html')
 def moviegrid(request):
     return render(request, 'Cinema/moviegrid.html')
 

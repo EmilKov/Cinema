@@ -14,7 +14,7 @@ urlpatterns = [
     # path("upload_pic/", views.upload_pic, name='upload_pic'),
     path("", views.index, name='index'),
     path("movielist/", views.movielist, name='movielist'),
-    # path("moviesingle/<int:pk>/".views.moviesingle,name='moviesingle'),
+    path("error404/", views.error404, name='error404'),
     path("moviesingle/<slug:movie_id>/", views.moviesingle, name='moviesingle'), #work
     # path("user/",views.)
     path('user/', views.user, name='user'),
