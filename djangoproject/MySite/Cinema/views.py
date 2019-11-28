@@ -194,9 +194,11 @@ def search(request):
             article_text = request.POST.get("search_field")
             if len(article_text) > 0:
                 search_res = Movie.objects.filter(plot__contains=article_text)
-                print(search_res)
+                print(search_res,article_text)
                 return render(request, "Cinema/search.html",
-                              {"search_res": search_res, "empty_res": "There is no article"})
+                              {"search_res": search_res, "empty_res": "There is no article",
+                               'article_text': article_text})
+
             elif len(article_text)==0:
                 return render(request, 'Cinema/index.html')
 
