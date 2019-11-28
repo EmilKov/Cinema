@@ -37,6 +37,6 @@ urlpatterns = [
     path('accounts/', TemplateView.as_view(template_name="logins/index.html")),
 
     url(r'^recommendations/(?P<page>\d*)', views.get_suggests, {'model': models.Movie}, name='get_suggests'),
-
+    url(r'^recommendation/decade/(?P<page>\d*)', views.get_rec, {'model': models.Movie}, name='get_rec'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

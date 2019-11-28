@@ -34,6 +34,31 @@ def whole_list(request, model, page):
             'pages': pages}
     return render(request, 'Cinema/{}list2.html'.format(model.get_name()), data)
 
+def get_rec(request,model,page):
+    if page == '':
+        page = 1
+    page = int(page)
+    objects = model.objects.all()
+
+    # MovieModel = apps.get_model('Cinema', 'Movie')
+    # genre = Movie.genres
+    # rating = Movie.rate
+
+    total_page = int(ceil(len(objects) / 1000))
+    if page > total_page:
+        return render(request, 'Cinema/error404.html')
+    last_item_index = 500 * page if page != total_page else len(objects)
+    pages = []
+    end_distance = total_page - page
+    start_page_num = page - 5 if end_distance >= 5 else page - 10 + end_distance
+    end_page_num = page + 5 if page > 5 else 10
+    for i in range(start_page_num, end_page_num + 1):
+        if 1 <= i <= total_page:
+            pages.append(i)
+    data = {'items': objects[10 * (page - 1):last_item_index], 'current_page': page, 'page_number': total_page,
+            'pages': pages}
+    return render(request,'Cinema/oh ma3.html',data)
+
 
 def get_suggests(request, model, page):
     if page == '':
@@ -46,8 +71,8 @@ def get_suggests(request, model, page):
     # rating = Movie.rate
 
     total_page = int(ceil(len(objects) / 1001))
-        # if page > total_page:
-        #     return render(request, 'Cinema/404.html')
+    if page > total_page:
+        return render(request, 'Cinema/error404.html')
     last_item_index = 500 * page if page != total_page else len(objects)
     pages = []
     end_distance = total_page - page

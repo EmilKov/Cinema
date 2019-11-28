@@ -13,7 +13,7 @@
 						<li class="active"><a href="#">Home</a></li>
 						<li> <span class="ion-ios-arrow-right"></span>  Recommendations</li>
 					</ul>
-					<h1> high rated movies</h1>
+					<h1> recommendation according to genre</h1>
 				</div>
 			</div>
 		</div>
@@ -60,9 +60,10 @@
 
 
 
-
+				<p>Genre: {{ item.rate }}</p>
 			        {% for item in items %}
-						{% if item.rate > 7.99 %}
+						{% if item.rate > 6.99 %}
+
 							<h6 align="bottom">№{{ forloop.counter }}</h6>
 							<div class="movie-item-style-2">
 
@@ -72,9 +73,7 @@
 									<h6><a href="moviesingle.html">{{ item.title }}<span>({{ item.year }})</span></a></h6>
 									<p class="rate"><i class="ion-android-star"></i><span>{{ item.rate }}</span> /10</p>
 									<p class="describe">{{ item.title }}</p>
-									<p class="run-time"> Run Time: {{ item.length }}    min<!--span>MMPA: PG-13 </span--><span>Genre(-s):  {{ item.genres }}</span></p>
-									<!--p>Director: <a href="#">Joss Whedon</a></p>
-									<p>Stars: <a href="#">Robert Downey Jr.,</a> <a href="#">Chris Evans,</a> <a href="#">  Chris Hemsworth</a></p-->
+									<p class="run-time"> Run Time: {{ item.length }}    min <span>Genre(-s):  {{ item.genres }}</span></p>
 									<br>
 									<details>
 									<summary><b>PLOT</b></summary>
