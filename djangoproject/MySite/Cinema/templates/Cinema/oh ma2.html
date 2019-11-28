@@ -8,12 +8,12 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-					<h1> recommendations</h1>
+					<h1> Movie List</h1>
 					<ul class="breadcumb">
 						<li class="active"><a href="#">Home</a></li>
 						<li> <span class="ion-ios-arrow-right"></span>  Recommendations</li>
 					</ul>
-					<h1> recommendation according to genre</h1>
+					<h1> worst films</h1>
 				</div>
 			</div>
 		</div>
@@ -60,9 +60,9 @@
 
 
 
-				<p>Genre: {{ item.rate }}</p>
+
 			        {% for item in items %}
-						{% if item.rate > 6.99 %}
+						{% if item.rate < 4.01 %}
 
 							<h6 align="bottom">№{{ forloop.counter }}</h6>
 							<div class="movie-item-style-2">
