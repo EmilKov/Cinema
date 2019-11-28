@@ -26,9 +26,9 @@
                          style="padding: 10px;">
                 </td>
                 <td style="vertical-align: top;text-align: left;padding: 10px;">
-                    <h3><a href="/movie/movie_detail/{{ item.movieid }}"
-                           target="_self">{{ item.title }}({{ item.year }})</a></h3>
-
+{#                    <h3><a href="/movie/movie_detail/{{ item.movieid }}"#}
+{#                           target="_self">{{ item.title }}({{ item.year }})</a></h3>#}
+                        <a href="{% url 'moviesingle' item.movieid %}"> {{ item.title }} </a>
                     <span class="stars">{{ item.rate }}</span>
                     <p class="stars">Rate: {{ item.rate }}</p>
                     <br>

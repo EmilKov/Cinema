@@ -144,13 +144,15 @@
 			<!-- /.navbar-collapse -->
 	    </nav>
 	    <!-- search form -->
-      <div class="top-search">
+      <form class="top-search" action="{% url 'search' %}" method="post">
         <select>
-        <option value="united">TV show</option>
-        <option value="saab">Others</option>
+        <option value="united">Films</option>
+        <option value="saab">Actors</option>
       </select>
-      <input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
-      </div>
+          {% csrf_token %}
+      <input type="text" name="search_field" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
+          <input type="submit" name="Search" value="Search">
+      </form>
   </div>
 		</div>
 
