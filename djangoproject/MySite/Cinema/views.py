@@ -116,7 +116,7 @@ def movielist(request):
 
 def moviesingle(request, movie_id):
     movie_list = Movie.objects.get(pk=movie_id)
-    return render(request, 'Cinema/moviesingle.html', {'movie_list': movie_list})
+    return render(request, 'Cinema/moviesingle1.html', {'movie_list': movie_list})
 
 
 def user(request):

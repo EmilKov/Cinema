@@ -16,6 +16,7 @@ urlpatterns = [
     path("movielist/", views.movielist, name='movielist'),
     # path("moviesingle/<int:pk>/".views.moviesingle,name='moviesingle'),
     path("moviesingle/<slug:movie_id>/", views.moviesingle, name='moviesingle'), #work
+    # path("moviesingle1/<slug:movie_id>/", views.moviesingle, name='moviesingle'), #work
     # path("user/",views.)
     path('user/', views.user, name='user'),
     path('movie/<int:pk>/',
