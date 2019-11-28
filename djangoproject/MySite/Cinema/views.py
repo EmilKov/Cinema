@@ -13,14 +13,16 @@ from django.apps import apps
 from .models import Movie
 
 def whole_list(request, model, page):
-    # if page is None:
+    if page == '':
+        page = 1
+    # if page :
     #     return render(request, 'Cinema/404.html')
     page = int(page)
     objects = model.objects.all()
 
     total_page = int(ceil(len(objects) / 10))
-    # if page > total_page:
-    #     return render(request, 'Cinema/404.html')
+    if page > total_page:
+        return render(request, 'Cinema/error404.html')
     last_item_index = 10 * page if page != total_page else len(objects)
     pages = []
     end_distance = total_page - page
@@ -40,8 +42,8 @@ def get_suggests(request, model, page):
     objects = model.objects.all()
 
     total_page = int(ceil(len(objects) / 1001))
-        # if page > total_page:
-        #     return render(request, 'Cinema/404.html')
+    if page > total_page:
+        return render(request, 'Cinema/404.html')
     last_item_index = 500 * page if page != total_page else len(objects)
     pages = []
     end_distance = total_page - page
