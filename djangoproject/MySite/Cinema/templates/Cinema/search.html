@@ -1,19 +1,153 @@
-{#{% extends "Cinema/navbar.html"%}#}
+{% extends "Cinema/navbar.html" %}
 
-{#{% block content %}#}
-  {% if search_res %}
-  <br>
-    {% for article in search_res%}
-      <ol>
-        <li value="{{forloop.counter}}">
-          <a href="{% url 'moviesingle' article.movieid %}">
-          <p>{{article.title}}</p>
-        </a>
-        {{article.plot|truncatewords:10}}
-        </li>
-      </ol>
-      {%endfor%}
-    {% else %}
-      {{empty_res}}
-    {% endif %}
-{#{% endblock%}#}
+
+{% block mainbody %}
+  {% load staticfiles %}
+<div class="hero common-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1> search a movie</h1>
+					<ul class="breadcumb">
+						<li class="active"><a href="#">Home</a></li>
+						<li> <span class="ion-ios-arrow-right"></span>  Search</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page-single movie_list">
+	<div class="container">
+		<div class="row ipad-width2">
+
+			<div class="col-md-8 col-sm-12 col-xs-12">
+
+				<div class="topbar-filter">
+					<p>Found <span>1,608 movies</span> in total</p>
+					<label>Sort by:</label>
+					<select>
+						<option value="popularity">Popularity Descending</option>
+						<option value="popularity">Popularity Ascending</option>
+						<option value="rating">Rating Descending</option>
+						<option value="rating">Rating Ascending</option>
+						<option value="date">Release date Descending</option>
+						<option value="date">Release date Ascending</option>
+					</select>
+					<a href="/movielist" class="list"><i class="ion-ios-list-outline active"></i></a>
+					<a  href="moviegrid.html" class="grid"><i class="ion-grid"></i></a>
+				</div>
+
+
+
+			        {% if object %}
+			            <div id=detail-infro>
+			                <h1>{{ object.name }}</h1>
+			                <p><a href="http://www.imdb.com/name/{{ object.actorid }}" target="_self">See in IMDB</a></p>
+			            </div>
+			            <div id="main-pic">
+			                <!-- <img border="0" src="{{ object.photo }}" alt="Cannot load photo, sorry!" width="261" height="401"> -->
+			            </div>
+
+
+			            <h2>{{ object.name }} in the following movie(s):</h2>
+			            <hr>
+			        {% endif %}
+
+
+
+              {% if search_res %}
+              {% for article in search_res%}
+
+              <a href="{% url 'moviesingle' article.movieid %}"><p>{{ forloop.counter }}</p></a>
+
+            <div class="movie-item-style-2">
+              <img src="{{ article.poster }}" alt="">
+              <div class="mv-item-infor">
+                <h6><a href="moviesingle.html">{{ article.title }}<span>({{ article.year }})</span></a></h6>
+                <p class="rate"><i class="ion-android-star"></i><span>{{ article.rate }}</span> /10</p>
+                <p class="describe">{{ article.title }}</p>
+                <p class="run-time"> Run Time: {{ article.length }}    min<!--span>MMPA: PG-13 </span--><span>Genre(-s):  {{ article.genres }}</span></p>
+                <br>
+                <details>
+                  <summary><b>PLOT</b></summary>
+                  <p>{{ article.plot }}</p>
+                </details>
+              </div>
+            </div>
+
+
+              {%endfor%}
+            {% endif %}
+
+
+
+
+
+
+			        {% if pages %}
+			            <p>You are in the {{ current_page }} page, {{ page_number }} pages in total</p>
+			            {% if current_page != 1 %}
+			                <a href="{{ 1 }}" target="_self">First</a>
+			                <a href="{{ current_page|add:-1 }}" target="_self">Previous</a>
+			            {% endif %}
+
+			            {% for page in pages %}
+			                {% if page == current_page %}
+			                    <b>{{ page }}</b>
+			                {% else %}
+			                    <a href="{{ page }}" target="_self">{{ page }}</a>
+			                {% endif %}
+			            {% endfor %}
+
+			            {% if current_page != page_number %}
+			                <a href="{{ current_page|add:1 }}" target="_self">Next</a>
+			                <a href="{{ page_number }}" target="_self">Last</a>
+			            {% endif %}
+			        {% endif %}
+
+			        <script>
+			            $(function () {
+			                $('span.stars').stars();
+			            });
+			            $.fn.stars = function () {
+			                return $(this).each(function () {
+			                    $(this).html($('<span />').width(Math.max(0, (Math.min(10, parseFloat($(this).html())))) * 8));
+			                });
+			            }
+
+			        </script>
+			    </div>
+				</div>
+
+				<div class="topbar-filter">
+					<label>Movies per page:</label>
+					<select>
+						<option value="range">5 Movies</option>
+						<option value="saab">10 Movies</option>
+					</select>
+					<div class="pagination2">
+						{% if pages %}
+						{% for page in pages %}
+								{% if page == current_page %}
+										<b>{{ page }}</b>
+								{% else %}
+										<a href="{{ page }}" target="_self">{{ page }}</a>
+								{% endif %}
+						{% endfor %}
+
+						{% if current_page != page_number %}
+								<a href="{{ current_page|add:1 }}" target="_self">Next</a>
+								<a href="{{ page_number }}" target="_self">Last</a>
+						{% endif %}
+				{% endif %}
+						<a href="#"><i class="ion-arrow-right-b"></i></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+{% endblock %}
