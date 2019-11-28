@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "Cinema/navbar.html" %}
 
 
@@ -151,3 +152,24 @@
 		</div>
 
 {% endblock %}
+=======
+{#{% extends "Cinema/navbar.html"%}#}
+
+{#{% block content %}#}
+  {% if search_res %}
+  <br>
+    {% for article in search_res%}
+      <ol>
+        <li value="{{forloop.counter}}">
+          <a href="{% url 'moviesingle' article.movieid %}">
+          <p>{{article.title}}</p>
+        </a>
+        {{article.plot|truncatewords:10}}
+        </li>
+      </ol>
+      {%endfor%}
+    {% else %}
+      {{empty_res}}
+    {% endif %}
+{#{% endblock%}#}
+>>>>>>> parent of 5934ba4... search.html upd
