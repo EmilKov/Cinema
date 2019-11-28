@@ -197,6 +197,9 @@ def search(request):
                 print(search_res)
                 return render(request, "Cinema/search.html",
                               {"search_res": search_res, "empty_res": "There is no article"})
+            elif len(article_text)==0:
+                return render(request, 'Cinema/index.html')
+
     except:
         print("Salam")
         return render(request, "Cinema/search.html", {"empty_res": "There is no article"})
