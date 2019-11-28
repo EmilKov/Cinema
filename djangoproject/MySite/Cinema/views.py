@@ -31,7 +31,7 @@ def whole_list(request, model, page):
             pages.append(i)
     data = {'items': objects[10 * (page - 1):last_item_index], 'current_page': page, 'page_number': total_page,
             'pages': pages}
-    return render(request, 'Cinema/{}_list.html'.format(model.get_name()), data)
+    return render(request, 'Cinema/{}list2.html'.format(model.get_name()), data)
 
 def get_suggests(request, model, page):
     if page == '':
