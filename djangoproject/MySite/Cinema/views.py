@@ -110,6 +110,10 @@ def index(request):
     return render(request, 'Cinema/index.html')
 
 
+def news(request):
+    return render(request, 'Cinema/bloglist.html')
+
+
 def movielist(request):
     return render(request, 'Cinema/movielist1.html')
 
@@ -148,6 +152,7 @@ class RegisterFormView(FormView):
 
         # Вызываем метод базового класса
         return super(RegisterFormView, self).form_valid(form)
+
 
 
 #
@@ -194,9 +199,17 @@ def search(request):
             article_text = request.POST.get("search_field")
             if len(article_text) > 0:
                 search_res = Movie.objects.filter(plot__contains=article_text)
+<<<<<<< HEAD
                 print(search_res)
                 return render(request, "Cinema/movielist2.html",
                               {"search_res": search_res, "empty_res": "There is no article"})
+=======
+                print(search_res,article_text)
+                return render(request, "Cinema/search.html",
+                              {"search_res": search_res, "empty_res": "There is no article",
+                               'article_text': article_text})
+
+>>>>>>> f472c325005cdc150a69294f2841157cad1134ba
             elif len(article_text)==0:
                 return render(request, 'Cinema/index.html')
 
