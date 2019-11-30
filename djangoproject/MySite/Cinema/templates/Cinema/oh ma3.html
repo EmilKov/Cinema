@@ -61,8 +61,9 @@
 
 
 			        {% for item in items %}
-							{% if item.year > '1999' and item.year < '2011' and item.rate > 7.9 %}
 
+							{% if item.year > 1999 and item.year < 2011 and item.rate > 7.9 %}
+								
 								<h6 align="bottom">№{{ forloop.counter }}</h6>
 								<div class="movie-item-style-2">
 

@@ -100,7 +100,7 @@ def get_suggests(request, model, page):
     return render(request, 'Cinema/oh ma.html', data)
 
 
-def get_rec(request,model,page):
+def get_rec(request, model, page):
     if page == '':
         page = 1
     page = int(page)
