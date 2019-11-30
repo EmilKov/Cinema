@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from django.views.generic import ListView, DetailView
-from Cinema.models import *
+from .models import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
@@ -27,7 +27,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('accounts/', TemplateView.as_view(template_name="logins/index.html")),
     path('search/', views.search, name='search'),
-    path('news/', views.news, name='news'),
     # path('moviegrid/', views.moviegrid, name='moviegrid'),
     url(r'^moviegrid/(?P<page>\d*)', views.whole_list_grid, {'model': models.Movie}, name='whole_list_grid'),
     url(r'^recommendations/(?P<page>\d*)', views.get_suggests, {'model': models.Movie}, name='get_suggests'),

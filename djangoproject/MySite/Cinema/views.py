@@ -5,12 +5,9 @@ from django.views.generic.edit import FormView
 from django.contrib.auth.forms import AuthenticationForm
 # Create your views here.
 from django.shortcuts import render, redirect
-from Cinema.models import Profile
-from Cinema.models import *
 from .models import *
 from math import *
-from django.apps import apps
-from .models import Movie
+
 
 def search(request):
     try:
@@ -65,6 +62,7 @@ def whole_list_grid(request, model, page):
     page = int(page)
     objects = model.objects.all()
 
+
     total_page = int(ceil(len(objects) / 12))
     if page > total_page:
         return render(request, 'Cinema/error404.html')
@@ -100,6 +98,7 @@ def get_suggests(request, model, page):
     data = {'items': objects[10 * (page - 1):last_item_index], 'current_page': page, 'page_number': total_page,
             'pages': pages}
     return render(request, 'Cinema/oh ma.html', data)
+
 
 def get_rec(request,model,page):
     if page == '':
@@ -157,9 +156,6 @@ def error404(request):
     return render(request, 'Cinema/error404.html')
 def moviegrid(request):
     return render(request, 'Cinema/moviegrid.html')
-
-def news(request):
-    return render(request, 'Cinema/bloglist.html')
 
 
 def movielist(request):
@@ -240,5 +236,3 @@ class TemplateView(FormView):
         # Вызываем метод базового класса
         return super(RegisterFormView, self).form_valid(form)
 
-def news(request):
-    return render(request, 'Cinema/bloglist.html')
