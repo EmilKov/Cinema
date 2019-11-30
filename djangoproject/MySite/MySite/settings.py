@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'News',
     'Trailers',
+    'Video',
 
     'allauth',
     'allauth.account',
