@@ -1,0 +1,40 @@
+{% extends "Cinema/navbar.html" %}
+
+
+{% block mainbody %}
+  {% load staticfiles %}
+<div class="hero common-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+          <br>
+					<h1> cinema trailers</h1>
+					<ul class="breadcumb">
+						<li class="active"><a href="#">Home</a></li>
+						<li> <span class="ion-ios-arrow-right"></span>  Trailers</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page-single movie_list">
+	<div class="container">
+		<div class="row ipad-width2">
+			<div class="col-md-8">
+                <a href="/trailers/all/1"><h1><font color="#00779e">All trailers</font></h1></a>
+
+				____________________________________________________
+				<br><br>
+				<a href="/trailers/new/1"><h1><font color="#00779e">New Trailers of the Week</font></h1></a>
+				<br>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
