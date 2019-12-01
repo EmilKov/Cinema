@@ -181,19 +181,19 @@ def kinoparkalmaty(request):
 
                           {'name':'KINOPARK 6 Sputnik', 'address': 'г. Алматы, мкр. Мамыр-1, 8А, ТРК "Спутник", 3 этаж', 'phone_number': '8 (701) 767-46-03',
                            'photo':'https://s.kino.kz/gallery/cinema/72/p223x267.jpg',
-                           'url': 'https://s.kino.kz/cinema/72'},
+                           'url': 'https://kino.kz/cinema/72'},
 
                           {'name':'KINOPARK 8 Moskva', 'address': 'г. Алматы, пр. Абая, уг. пр. Алтынсарина, ТРЦ MOSKVA Metropolitan', 'phone_number': '+7 778 099 09 17',
                            'photo':'http://www.kinopark.kz/storage/app/uploads/public/5b0/3ee/d53/5b03eed530f25658777945.jpg',
-                           'url':'https://s.kino.kz/cinema/149'},
+                           'url':'https://kino.kz/cinema/149'},
 
                           {'name':'KINOPARK 11 IMAX Esentai', 'address': 'г. Алматы, Esentai Mall, 4 этаж, пр. Аль-Фараби, 77/8', 'phone_number': '+7 701 762 45 11',
                            'photo':'http://www.kinopark.kz/storage/app/uploads/public/5a1/fa6/694/5a1fa66943e9d114540849.jpg',
-                           'url':'https://s.kino.kz/cinema/99'},
+                           'url':'https://kino.kz/cinema/99'},
 
                           {'name':'KINOPARK 16 Forum', 'address': 'г. Алматы, пр. Сейфуллина 617, 5 этаж', 'phone_number': '+7 705 208 9595',
                            'photo':'http://www.kinopark.kz/storage/app/uploads/public/5d9/33a/574/5d933a5740dbf291927498.jpg',
-                           'url':'https://s.kino.kz/cinema/167'},
+                           'url':'https://kino.kz/cinema/167'},
                           ]
 
     data = {}
@@ -345,4 +345,3 @@ class TemplateView(FormView):
 
         # Вызываем метод базового класса
         return super(RegisterFormView, self).form_valid(form)
-
