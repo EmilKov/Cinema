@@ -7,7 +7,7 @@
 <![endif]-->
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html lang="en" class="no-js">
-
+{% load staticfiles %}
 <!-- landing14:04-->
 <head>
 	<!-- Basic need -->
@@ -25,8 +25,8 @@
 	<meta name="format-detection" content="telephone-no">
 
 	<!-- CSS files -->
-	<link rel="stylesheet" href="css/plugins.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 <body>
@@ -51,7 +51,7 @@
                     <input type="text" name="username" id="username" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
         	</div>
-           
+
             <div class="row">
             	<label for="password">
                     Password:
@@ -92,7 +92,7 @@
                     <input type="text" name="username" id="username-2" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
             </div>
-           
+
             <div class="row">
                 <label for="email-2">
                     your email:
@@ -120,7 +120,7 @@
 <!--end of signup form popup-->
 
 <div class="landing-hero">
-	<img src="images/logo1.png" alt="Logo">
+	<img src="{% static 'images/logo1.png' %}" alt="Logo">
 	<div class="row landing-hero-text">
 		<h2>MOST COMPLETED</h2>
 		<h2 class="text-yellow">FILM REVIEW  &middot;  MOVIE DATABASE</h2>
@@ -131,14 +131,14 @@
 <div class="landing-version">
 	<div class="container">
 		<div class="col-md-6">
-			<img src="images/uploads/landing-dark-version.png" alt="Dark Version">
+			<img src="{% static 'images/uploads/landing-dark-version.png' %}" alt="Dark Version">
 			<h2>DARK VERSION</h2>
-			<a href="index-2.html" target="blank_" class="redbtn">SEE DEMO</a>
+			<a href="/" target="blank_" class="redbtn">SEE DEMO</a>
 		</div>
 		<div class="col-md-6">
-			<img src="images/uploads/landing-light-version.png" alt="Light Version">
+			<img src="{% static 'images/uploads/landing-light-version.png' %}" alt="Light Version">
 			<h2>LIGHT VERSION</h2>
-			<a href="index_light.html" target="blank_" class="redbtn">SEE DEMO</a>
+			<a href="/" target="blank_" class="redbtn">SEE DEMO</a>
 		</div>
 	</div>
 </div>
@@ -148,10 +148,10 @@
 </div>
 <!-- end of footer v3 section-->
 
-<script src="js/jquery.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/plugins2.js"></script>
-<script src="js/custom.js"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/plugins2.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 <!-- landing14:38-->

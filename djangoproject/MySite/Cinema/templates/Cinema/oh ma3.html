@@ -63,14 +63,14 @@
 			        {% for item in items %}
 
 							{% if item.year > 1999 and item.year < 2011 and item.rate > 7.9 %}
-								
+
 								<h6 align="bottom">№{{ forloop.counter }}</h6>
 								<div class="movie-item-style-2">
 
 
 									<img src="{{ item.poster }}" alt="">
 									<div class="mv-item-infor">
-										<h6><a href="moviesingle.html">{{ item.title }}<span>({{ item.year }})</span></a></h6>
+										<h6><a href="/moviesingle/{{ item.movieid }}">{{ item.title }}<span>({{ item.year }})</span></a></h6>
 										<p class="rate"><i class="ion-android-star"></i><span>{{ item.rate }}</span> /10</p>
 										<p class="describe">{{ item.title }}</p>
 										<p class="run-time"> Run Time: {{ item.length }}    min<!--span>MMPA: PG-13 </span--><span>Genre(-s):  {{ item.genres }}</span></p>

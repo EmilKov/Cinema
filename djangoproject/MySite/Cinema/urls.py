@@ -18,6 +18,9 @@ urlpatterns = [
     path("moviesingle/<slug:movie_id>/", views.moviesingle, name='moviesingle'), #work
     # path("user/",views.)
     path('user/', views.user, name='user'),
+    path('user/changepass/', views.changepass, name='changepass'),
+    path('landing/', views.landing, name='landing'),
+    path('comingsoon/', views.comingsoon, name='comingsoon'),
     path('movie/<int:pk>/',
     DetailView.as_view(model=Movie,
     template_name="Cinema/moviesingle.html")),
