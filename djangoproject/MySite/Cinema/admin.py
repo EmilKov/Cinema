@@ -25,7 +25,7 @@ class CustomUserAdmin(UserAdmin):
 admin.site.register(Movie)
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
-
+admin.site.register(Comment_movie)
 '''
 admin.site.register(Article)
 admin.site.register(Editor)

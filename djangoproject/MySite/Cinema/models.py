@@ -42,7 +42,7 @@ def create_profile(sender, **kwargs):
 
 
 class Movie(models.Model):
-    movieid = models.CharField(max_length=20, primary_key=True)
+    movieid = models.CharField(max_length=20, primary_key=True,null=False)
     title = models.CharField(max_length=30)
     year = models.IntegerField(default=0)
     length = models.CharField(max_length=10)
@@ -67,6 +67,17 @@ class Movie(models.Model):
     def get_name():
         return 'movie'
 
+class Comment_movie(models.Model):
+    class Meta():
+        db_table='comments'
+        verbose_name='comments'
+        verbose_name_plural='Comment'
+# user = models.OneToOneField(User, default=None, null=True, on_delete=models.CASCADE)
+    user=models.ForeignKey(User,on_delete=models.CASCADE,default=None, null=True)
+    movie=models.ForeignKey(Movie,on_delete=models.CASCADE,null=True)
+    text = models.TextField("Some text")
+    created= models.DateTimeField("Added",auto_now_add=True)
+    moder=models.BooleanField(default=False)
 
 def get_list_or_404(klass, *args, **kwargs):
     """

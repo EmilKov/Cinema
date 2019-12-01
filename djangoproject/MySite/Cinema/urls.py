@@ -20,10 +20,14 @@ urlpatterns = [
     path('user/', views.user, name='user'),
     path('user/changepass/', views.changepass, name='changepass'),
     path('landing/', views.landing, name='landing'),
-    path('comingsoon/', views.comingsoon, name='comingsoon'),
-    path('movie/<int:pk>/',
-    DetailView.as_view(model=Movie,
-    template_name="Cinema/moviesingle.html")),
+    path('<str:movieid>/', views.post_single, name='Comment_movie'),
+    # url(r'^(?P<movieid>[0-9]+)/', views.EArticleView.as_view(), name='movieid'),
+    # path('<str:movieid>/', views.EArticleView.as_view(), name='Comment_movie'),
+    # url(r'^comment/(?P<article_id>[0-9]+)/$', views.add_comment, name='add_comment')
+    # url(r'^(?P<slug>[-\w]+)/$', views.full_slug, name='full_slug'), # Вывод новостей
+    # url(r'^addcomment/(?P<one_id>\d+)/$', views.addcomment), # Добавление коммента
+    path('landing/', views.landing, name='landing'),
+    # path('movie/<int:pk>/',DetailView.as_view(model=Movie,template_name="Cinema/moviesingle.html")),
     url(r'^movie_all/(?P<page>\d*)', views.whole_list, {'model': models.Movie}, name='whole_list'),
     path('register/',views.RegisterFormView.as_view(),name='signup'),
     path('login/',views.LoginFormView.as_view(),name='login'),

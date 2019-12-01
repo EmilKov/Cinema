@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'News',
     'Trailers',
     'Video',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

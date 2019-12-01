@@ -1,0 +1,52 @@
+{{ movie.title }}<br>
+{{ movie.movieid }}
+{{ movie.year}}
+{{ movie.create }}<br>
+{% if movie.image %}
+  <img src="{{ movie.poster }}" alt="">
+{% endif %}
+{{movie.text}}<br><br>
+updated {{movie.update}}<hr><br>
+<article>
+        <h1>{{ article.article_title }}</h1>
+        {{ article.article_content|safe }}
+    </article>
+<p>
+<form action="" method="post">
+  {% csrf_token %}
+  {{form}}
+  <input type="submit" value='Отправить'>
+
+</form>
+<!-- <p>lol</p> -->
+
+
+{% for comment in comments %}
+    <div class="comment">
+        <p class="info">
+            Comment {{ forloop.counter }} by {{ comment.name }}
+            {{ comment.created }}
+        </p>
+        {{ comment.text|linebreaks }}
+    </div>
+{% empty %}
+    <p>There are no comments yet.</p>
+{% endfor %}
+        <a name="comment-{{ comment.id }}"></a>
+        <div class="row" id="{{ comment.id }}">
+            <div class="col-md-{{ comment.get_col }} col-md-offset-{{ comment.get_offset }}">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{ comment.pub_date }}
+                        <a href="#comment-{{ comment.id }}">#</a>
+                    </div>
+                    <div class="panel-body">
+                        <div>{{ comment.content|safe }}</div>
+                        {% if form %}<a class="btn btn-default btn-xs pull-right"
+                                        onclick="return show_comments_form({{ comment.id }})">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+</p>

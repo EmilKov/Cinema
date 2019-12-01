@@ -6,7 +6,29 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from .models import *
 from math import *
+from django.views import View
+from .forms import CommentForm
+from django.template.context_processors import csrf
+from django.contrib import auth
+from django.shortcuts import render_to_response
 
+def post_single(request,movieid):
+    movie=Movie.objects.get(movieid=movieid)
+    comments=Comment_movie.objects.filter(movie=movie)
+    # comments = Comment_movie.text.filter(active=True)
+    # form=CommentForm(request.POST)
+    if request.method=="POST":
+        form=CommentForm(request.POST)
+
+        if form.is_valid():
+            comm=form.save(commit=False)
+            comm.user=request.user
+            comm.movie=movie
+            comm.save()
+    else:
+
+        form=CommentForm()
+    return render(request,"registration/moviesingle2.html",{"movie":movie,"form":form,"comments":comments})
 
 def search(request):
     try:
