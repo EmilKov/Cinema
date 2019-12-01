@@ -1,0 +1,86 @@
+{% extends "Cinema/navbar.html" %}
+
+
+{% block mainbody %}
+  {% load staticfiles %}
+<div class="hero common-hero" xmlns="http://www.w3.org/1999/html">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+          <br>
+					<h1> kinopark</h1>
+					<ul class="breadcumb">
+						<li class="active"><a href="#">Home</a></li>
+						<li> <span class="ion-ios-arrow-right"></span>  Movie Schedule</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page-single movie_list">
+	<div class="container">
+		<div class="row ipad-width2">
+			<div class="col-md-8">
+				<h3><p>See also:</p></h3>
+				<a href="/"><h3><font color="#00779e">All Kazakhstan movie theatres</font></h3></a>
+
+				____________________________________________________
+				<br><br>
+				<a href="/schedule"><h1><font color="#00779e">Aktobe Movie Theatres</font></h1></a>
+				<br><br>
+			</div>
+			<div class="col-md-8 col-sm-12 col-xs-12">
+
+				<div class="topbar-filter">
+					<p>Found <span>cinema</span> in total</p>
+					<label>Sort by:</label>
+					<select>
+						<option value="popularity">Popularity Descending</option>
+						<option value="popularity">Popularity Ascending</option>
+						<option value="rating">Rating Descending</option>
+						<option value="rating">Rating Ascending</option>
+						<option value="date">Release date Descending</option>
+						<option value="date">Release date Ascending</option>
+					</select>
+					<a href="#" class="list"><i class="ion-ios-list-outline active"></i></a>
+				</div>
+
+
+
+
+
+                <a href="{{ 73.url }}">
+            <div class="movie-item-style-2">
+              <img src="{{ 73.photo }}" width="1" height="500" alt="">
+              <div class="mv-item-infor">
+                <h6>1</h6>
+                <h5><font color="#00779e">{{ 73.name }}</font></h5>
+				  <br>
+				  <h6><span><font color="#00779e">({{ 73.phone_number }})</font></span></h6>
+                <br>
+                <details>
+					<summary><font color="#00779e"><b>ADDRESS</b></font></summary>
+                  <p>{{ 73.address }}</p>
+                </details>
+              </div>
+            </div>
+            </a>
+				<br>
+
+
+
+
+
+
+
+			    </div>
+				</div>
+
+
+
+		</div>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "Cinema/navbar.html" %}
+
+
+{% block mainbody %}
+  {% load staticfiles %}
+<div class="hero common-hero" xmlns="http://www.w3.org/1999/html">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+          <br>
+					<h1> kinopark</h1>
+					<ul class="breadcumb">
+						<li class="active"><a href="#">Home</a></li>
+						<li> <span class="ion-ios-arrow-right"></span>  Movie Schedule</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page-single movie_list">
+	<div class="container">
+        <div class="col-md-8">
+            <a href="/schedule"><h1><font color="#00779e">All Kazakhstan movie theatres</font></h1></a>
+            <br>
+        </div>
+<br><br><br>
+        <div class="topbar-filter">
+            <p>Found <span>cinema</span> in total</p>
+            <label>Sort by:</label>
+            <select>
+                <option value="popularity">Popularity Descending</option>
+                <option value="popularity">Popularity Ascending</option>
+                <option value="rating">Rating Descending</option>
+                <option value="rating">Rating Ascending</option>
+                <option value="date">Release date Descending</option>
+                <option value="date">Release date Ascending</option>
+            </select>
+            <a href="#" class="list"><i class="ion-ios-list-outline active"></i></a>
+        </div>
+
+
+
+
+
+        <a href="/schedule/astana">
+            <div class="movie-item-style-2">
+                <img src="https://astanatimes.com/wp-content/uploads/2019/03/Kazahstan-2-Retina-min.jpg" width="1" height="500" alt="">
+                <div class="mv-item-infor">
+                    <h5><font color="#00779e">Astana</font></h5>
+                </div>
+            </div>
+        </a>
+        <br>
+
+        <a href="/schedule/almaty">
+            <div class="movie-item-style-2">
+                <img src="https://www.aeroflot.ru/media/aflfiles/kz/ala/ala_2.jpg" width="1" height="500" alt="">
+                <div class="mv-item-infor">
+                    <h5><font color="#00779e">Almaty</font></h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="/schedule/shymkent">
+            <div class="movie-item-style-2">
+                <img src="https://ticketon.kz/files/images/Shymkent-vid.jpg" width="1" height="500" alt="">
+                <div class="mv-item-infor">
+                    <h5><font color="#00779e">Shymkent</font></h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="/schedule/aktobe">
+            <div class="movie-item-style-2">
+                <img src="http://aktobe.gov.kz/sites/default/files/gallery/A4-3_0.jpg" width="1" height="500" alt="">
+                <div class="mv-item-infor">
+                    <h5><font color="#00779e">Aktobe</font></h5>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}
