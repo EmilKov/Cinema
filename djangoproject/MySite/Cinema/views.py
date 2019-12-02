@@ -11,7 +11,7 @@ from .forms import CommentForm
 from django.template.context_processors import csrf
 from django.contrib import auth
 from django.shortcuts import render_to_response
-'''
+
 def post_single(request,movieid):
     movie=Movie.objects.get(movieid=movieid)
     comments=Comment_movie.objects.filter(movie=movie)
@@ -29,7 +29,7 @@ def post_single(request,movieid):
 
         form=CommentForm()
     return render(request,"registration/moviesingle2.html",{"movie":movie,"form":form,"comments":comments})
-'''
+
 
 def search(request):
     try:
