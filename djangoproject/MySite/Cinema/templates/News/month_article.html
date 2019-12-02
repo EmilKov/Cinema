@@ -28,12 +28,12 @@
 
 				<font color="darkcyan">See also: </font>
 				<a href="/news/dayarticle/list"><h5><font color="#00779e">Articles of the Day</font></h5></a><br>
-				<a href="/news/montharticle/list"><h5><font color="#00779e">Articles of the Month</font></h5></a><br>
-				<a href="/news/yeararticle/list"><h5><font color="#00779e">Articles of the Year</font></h5></a><br>
+				<a href="/news/article/list"><h5><font color="#00779e">Articles of the Week</font></h5></a><br>
+                <a href="/news/yeararticle/list"><h5><font color="#00779e">Articles of the Year</font></h5></a><br>
 				<a href="/news/"><h5><font color="#00779e">NEWS</font></h5></a><br>
 				____________________________________________________
 				<br><br>
-                <a href="/news/article/list/"><h1><font color="#00779e">Articles of the Week</font></h1></a>
+                <a href="/news/montharticle/list/"><h1><font color="#00779e">Articles of the Month</font></h1></a>
 				<br>
 				<div class="topbar-filter">
 					<p>Found <span>some videos</span> in total</p>
@@ -53,7 +53,7 @@
 
 
 				{% for item in items%}
-				{% if item.week_publications %}
+				{% if item.month_publications %}
 
                 <a href="{% url 'News:review' item.id %}">
             <div class="movie-item-style-2">
@@ -70,7 +70,7 @@
                 {% else %}
                     {% if forloop.last == True %}
                         <br>
-                        <font color="white"><h1>Unfortunately, there is no new weekly articles yet.</h1></font> <br><br>
+                        <font color="white"><h1>Unfortunately, there is no new monthly articles yet.</h1></font> <br><br>
                     {% endif %}
 				{% endif %}
               {% endfor %}

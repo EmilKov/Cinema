@@ -13,9 +13,13 @@ class Article(models.Model):
     def __str__(self):
         return self.article_title
 
+    def year_publications(self):
+        today = datetime.datetime.today()
+        return self.article_date >= (today - datetime.timedelta(days=365))
+
     def month_publications(self):
         today = datetime.datetime.today()
-        return self.article_date >= (today - datetime.timedelta(days=7))
+        return self.article_date >= (today - datetime.timedelta(days=31))
 
     def week_publications(self):
         today = datetime.datetime.today()
