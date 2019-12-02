@@ -14,5 +14,10 @@ class Trailer(models.Model):
     def __str__(self):
         return self.trailer_name
 
-    def recently_added(self):
-        return self.trailer_date >= (timezone.now() - datetime.timedelta(days=7))
+    def week_publications(self):
+        today = datetime.datetime.today()
+        d = today.day
+        m = today.month
+        y = today.year
+        now = datetime.date(y, m, d)
+        return self.trailer_date >= (now - datetime.timedelta(days=7))

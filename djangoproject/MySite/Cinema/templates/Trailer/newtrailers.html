@@ -11,8 +11,8 @@
           <br>
 					<h1> cinema trailers</h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="#">Home</a></li>
-						<li> <span class="ion-ios-arrow-right"></span>  Trailers</li>
+						<li class="active"><a href="/">Home</a></li>
+						<li> <span class="ion-ios-arrow-right"></span><a href="/trailers/">  Trailers</a></li>
 					</ul>
 				</div>
 			</div>
@@ -25,14 +25,15 @@
 		<div class="row ipad-width2">
 
 			<div class="col-md-8 col-sm-12 col-xs-12">
-				<a href="/trailers/all/1"><h1><font color="#00779e">All trailers</font></h1></a>
+				<h3><p>See also:</p></h3>
+				<a href="/trailers/all/1"><h3><font color="#00779e">All Trailers</font></h3></a>
 
 				____________________________________________________
 				<br><br>
 				<a href="/trailers/new/1"><h1><font color="#00779e">New Trailers of the Week</font></h1></a>
 				<br>
 				<div class="topbar-filter">
-					<p>Found <span>some videos</span> in total</p>
+					<p>Found <span>some trailers</span> in total</p>
 					<label>Sort by:</label>
 					<select>
 						<option value="popularity">Popularity Descending</option>
@@ -49,22 +50,24 @@
 
 
 				{% for item in items%}
+				{% if item.week_publications %}
                 <a href="{{ item.trailer_url }}">
             <div class="movie-item-style-2">
               <img src="{{ item.trailer_photo }}" width="1" height="500" alt="">
               <div class="mv-item-infor">
                 <h6>{{ forloop.counter }}</h6>
-                <h5>{{ item.trailer_name }}</h5>
+				  <h5><font color="#00779e">{{ item.trailer_name }}</font></h5>
 				  <br>
-				<h6><span>({{ item.trailer_date }})</span></h6>
+				  <h6><span><font color="#00779e">({{ item.trailer_date }})</font></span></h6>
                 <br>
                 <details>
-                  <summary><b>SYNOPSIS</b></summary>
+					<summary><b><font color="#00779e">SYNOPSIS</font></b></summary>
                   <p>{{ item.trailer_text }}</p>
                 </details>
               </div>
             </div>
             </a>
+				{% endif %}
               {% endfor %}
 
 
