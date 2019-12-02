@@ -9,10 +9,10 @@
 			<div class="col-md-12">
 				<div class="hero-ct">
           <br>
-					<h1> cinema trailers</h1>
+					<h1> movie articles</h1>
 					<ul class="breadcumb">
 						<li class="active"><a href="/">Home</a></li>
-						<li> <span class="ion-ios-arrow-right"></span><a href="/trailers/">  Trailers</a></li>
+                        <a href="/news/"><li class="active"> <span class="ios-ios-arrow-right"></span> News</li></a>
 					</ul>
 				</div>
 			</div>
@@ -23,19 +23,20 @@
 <div class="page-single movie_list">
 	<div class="container">
 		<div class="row ipad-width2">
-			<div class="col-md-8">
-				<h3><p>See also:</p></h3>
-				<a href="/trailers/new/1"><h3><font color="#00779e">New Trailers of the Week</font></h3></a>
 
-				____________________________________________________
-				<br><br>
-				<a href="/trailers/all/1"><h1><font color="#00779e">All trailers</font></h1></a>
-				<br><br>
-			</div>
 			<div class="col-md-8 col-sm-12 col-xs-12">
 
+				<font color="darkcyan">See also: </font>
+				<a href="/news/dayarticle/list"><h5><font color="#00779e">Articles of the Day</font></h5></a><br>
+				<a href="/news/article/list"><h5><font color="#00779e">Articles of the Week</font></h5></a><br>
+				<a href="/news/montharticle/list"><h5><font color="#00779e">Articles of the Month</font></h5></a><br>
+				<a href="/news/"><h5><font color="#00779e">NEWS</font></h5></a><br>
+				____________________________________________________
+				<br><br>
+                <a href="/news/yeararticle/list/"><h1><font color="#00779e">Articles of the Year</font></h1></a>
+				<br>
 				<div class="topbar-filter">
-					<p>Found <span>some videos</span> in total</p>
+					<p>Found <span>some articles</span> in total</p>
 					<label>Sort by:</label>
 					<select>
 						<option value="popularity">Popularity Descending</option>
@@ -52,25 +53,27 @@
 
 
 				{% for item in items%}
-                <a href="{{ item.trailer_url }}">
+				{% if item.year_publications %}
+
+                <a href="{% url 'News:review' item.id %}">
             <div class="movie-item-style-2">
-              <img src="{{ item.trailer_photo }}" width="1" height="500" alt="">
+              <img src="{{ item.article_poster }}" width="1" height="500" alt="">
               <div class="mv-item-infor">
                 <h6>{{ forloop.counter }}</h6>
-                <h5>{{ item.trailer_name }}</h5>
+				  <h5><font color="#00779e">{{ item.article_title }}</font></h5>
 				  <br>
-				<h6><span>({{ item.trailer_date }})</span></h6>
+				<h6><span><font color="grey">({{ item.article_date }})</font></span></h6>
                 <br>
-                <details>
-                  <summary><b>SYNOPSIS</b></summary>
-                  <p>{{ item.trailer_text }}</p>
-                </details>
               </div>
             </div>
             </a>
-				<br>
+                {% else %}
+                    {% if forloop.last == True %}
+                        <br>
+                        <font color="white"><h1>Unfortunately, there is no new weekly articles yet.</h1></font> <br><br>
+                    {% endif %}
+				{% endif %}
               {% endfor %}
-
 
 
 
@@ -114,8 +117,8 @@
 				<div class="topbar-filter">
 					<label>Articles per page:</label>
 					<select>
-						<option value="range">5 Videos</option>
-						<option value="saab">10 Videos</option>
+						<option value="range">5 Articles</option>
+						<option value="saab">10 Articles</option>
 					</select>
 					<div class="pagination2">
 						{% if pages %}

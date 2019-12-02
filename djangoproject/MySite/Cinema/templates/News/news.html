@@ -3,9 +3,49 @@
 
 {% block mainbody %}
   {% load staticfiles %}
+<div class="hero common-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+          <br>
+					<h1> movie news</h1>
+					<ul class="breadcumb">
+						<li class="active"><a href="/">Home</a></li>
+                        <a href="/news/"><li class="active"> <span class="ios-ios-arrow-right"></span> News</li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page-single movie_list">
+	<div class="container">
+		<div class="row ipad-width2">
+
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				____________________________________________________
+				<br><br>
+
+				<a href="/news/dayarticle/list"><h5><font color="#00779e">Articles of the Day</font></h5></a><br>
+                <a href="/news/article/list"><h5><font color="#00779e">Articles of the Week</font></h5></a><br>
+				<a href="/news/montharticle/list"><h5><font color="#00779e">Articles of the Month</font></h5></a><br>
+				<a href="/news/yeararticle/list"><h5><font color="#00779e">Articles of the Year</font></h5></a><br>
+				____________________________________________________
+				<br><br>
+				<a href="/trailers/"><h5><font color="#00779e">Trailers</font></h5></a><br>
+				<a href="/trailers/new"><h5><font color="#00779e">New Trailers</font></h5></a><br>
+				<a href="/trailers/all"><h5><font color="#00779e">All Trailers</font></h5></a><br>
+				____________________________________________________
+				<br><br>
+				<a href="/videos/"><h5><font color="#00779e">All Video Essays</font></h5></a><br>
+				<a href="/videos/new"><h5><font color="#00779e">New Video Essays of the Month</font></h5></a><br>
 
 
-
-
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
