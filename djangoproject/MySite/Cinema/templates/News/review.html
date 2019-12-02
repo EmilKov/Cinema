@@ -1,0 +1,37 @@
+{% extends "Cinema/navbar.html" %}
+
+
+{% block mainbody %}
+  {% load staticfiles %}
+<div class="hero common-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+          <br>
+					<h1> {{ article.article_title }}</h1>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single movie_list">
+	<div class="container">
+		<div class="row ipad-width2">
+            <center><img src="{{ article.article_poster }}" width="1000" height="500" align="bottom" alt=""></center>
+            <br><br>
+                    <h6><font color="white">({{ article.article_date }})</font></span></h6>
+                         <br>
+                         <font color="grey">
+                             <p>{{article.article_text}}</p>
+                         </font>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

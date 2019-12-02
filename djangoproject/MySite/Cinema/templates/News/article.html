@@ -9,10 +9,11 @@
 			<div class="col-md-12">
 				<div class="hero-ct">
           <br>
-					<h1> cinema news</h1>
+					<h1> video essay</h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="#">Home</a></li>
-						<li> <span class="ion-ios-arrow-right"></span>  News</li>
+						<li class="active"><a href="/">Home</a></li>
+                        <a href="/videos"><li class="active"> <span class="ios-ios-arrow-right"></span> Video</li></a>
+						<li> <span class="ion-ios-arrow-right"></span>  New Video</li>
 					</ul>
 				</div>
 			</div>
@@ -26,8 +27,14 @@
 
 			<div class="col-md-8 col-sm-12 col-xs-12">
 
+				<font color="darkcyan">See also: </font>
+				<a href="/videos/"><h5><font color="#00779e">All Video Essays</font></h5></a>
+				____________________________________________________
+				<br><br>
+                <a href="/videos/new"><h1><font color="#00779e">New Video Essays of the Month</font></h1></a>
+				<br>
 				<div class="topbar-filter">
-					<p>Found <span>some articles</span> in total</p>
+					<p>Found <span>some videos</span> in total</p>
 					<label>Sort by:</label>
 					<select>
 						<option value="popularity">Popularity Descending</option>
@@ -44,21 +51,26 @@
 
 
 				{% for item in items%}
+				{% if item.week_publications %}
+                <a href="{% url 'News:review' item.id %}">
             <div class="movie-item-style-2">
               <img src="{{ item.article_poster }}" width="1" height="500" alt="">
               <div class="mv-item-infor">
                 <h6>{{ forloop.counter }}</h6>
-                <h5>{{ item.article_title }}</h5>
+				  <h5><font color="#00779e">{{ item.article_title }}</font></h5>
 				  <br>
 				<h6><span>({{ item.article_date }})</span></h6>
                 <br>
+				  <font color="#00779e">
                 <details>
-                  <summary><b>PREVIEW</b></summary>
-                  <p>{{ item.article_title }}...</p>
+                  <summary><b>SYNOPSIS</b></summary>
+                  <p>{{ item.article_text }}</p>
                 </details>
+					  </font>
               </div>
             </div>
-
+            </a>
+				{% endif %}
               {% endfor %}
 
 
