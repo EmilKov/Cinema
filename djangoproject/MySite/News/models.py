@@ -14,12 +14,12 @@ class Article(models.Model):
         return self.article_title
 
     def year_publications(self):
-        today = datetime.datetime.today()
-        return self.article_date >= (today - datetime.timedelta(days=365))
+        today = datetime.datetime.now()-datetime.timedelta(days=7)
+        return self.article_date >= today
 
     def month_publications(self):
-        today = datetime.datetime.today()
-        return self.article_date >= (today - datetime.timedelta(days=31))
+        today = datetime.datetime.now() - datetime.timedelta(days=31)
+        return self.article_date >= today
 
     def week_publications(self):
         today = datetime.datetime.today()
@@ -27,7 +27,10 @@ class Article(models.Model):
         m = today.month
         y = today.year
         now = datetime.date(y, m, d)
-        return self.article_date >= (today - datetime.timedelta(days=7))
+        time = now-datetime.timedelta(days=7)
+        print(self.article_date, today, (now - datetime.timedelta(days=7)))
+        today = datetime.datetime.now() - datetime.timedelta(days=7)
+        return self.article_date >= today
 
     def today_publications(self):
         today = datetime.datetime.today()
@@ -37,7 +40,8 @@ class Article(models.Model):
         y = today.year
         now = datetime.date(y, m, d)
         print(now,self.article_date)
-        return self.article_date >= (today - datetime.timedelta(days=1))
+        today = datetime.datetime.now() - datetime.timedelta(days=1)
+        return self.article_date >= today
 
 '''
 class Comment(models.Model):
